@@ -3,15 +3,17 @@ import { useState } from "react";
 
 interface Props {
     linkText: string;
+    onLinkClick: ()=>void;
 }
 
-const NavLink = ({ linkText }: Props) => {
+const NavLink = ({ linkText, onLinkClick }: Props) => {
     const [highlight, setHighlight] = useState(false);
 
   return (
     <>
         <div className="w-fit h-fit flex flex-col gap-1 px-1 cursor-pointer"
-            onMouseEnter={()=> setHighlight(true)} onMouseLeave={()=> setHighlight(false)}>
+            onMouseEnter={()=> setHighlight(true)} onMouseLeave={()=> setHighlight(false)}
+            onClick={onLinkClick}>
 
             <p className={`text-[${highlight? '#101828':'#737373'}] text-sm font-[500] transition-all duration-200`}> 
                 {linkText} 

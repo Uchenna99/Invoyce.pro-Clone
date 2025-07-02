@@ -5,20 +5,20 @@ import NavLink from "./NavLink";
 const Navbar = () => {
   return (
     <>
-        <div className="w-full h-22 bg-white flex justify-center sticky top-0">
+        <div className="w-full h-22 bg-white flex justify-center fixed top-0 left-0 z-50 px-5">
 
-          <div className="w-full sm:w-[1200px] h-full flex justify-between">
+          <div className="w-full xl:w-[1250px] h-full flex justify-between">
 
-            <div className="w-[130px] h-full flex items-center gap-2">
-              <img src={logo} alt="logo" />
+            <div className="w-[140px] h-full flex items-center gap-3">
+              <img src={logo} alt="logo" className="w-9" />
               <p className="text-xl text-[#101828] font-semibold">Invoyce</p>
             </div>
 
             <div className="w-fit h-full flex items-center gap-10 pt-2">
 
-              <NavLink linkText="Features" />
-              <NavLink linkText="Pricing" />
-              <NavLink linkText="FAQ" />
+              <NavLink linkText="Features" onLinkClick={()=>{}} />
+              <NavLink linkText="Pricing" onLinkClick={()=>{}} />
+              <NavLink linkText="FAQ" onLinkClick={()=>{}} />
 
             </div>
 
