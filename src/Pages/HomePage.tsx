@@ -43,7 +43,7 @@ const HomePage = () => {
 
         </div>
 
-        <div className="w-[600px] aspect-square bg-cover bg-right">
+        <div className="w-[350px] min-w-[280px] lg:w-[600px] aspect-square bg-cover bg-right">
           <img src={hero} alt="" className="drop-shadow-xl" />
         </div>
 
