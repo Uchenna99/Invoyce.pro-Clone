@@ -60,8 +60,9 @@ const Navbar = () => {
         </div>
 
 
-        <motion.div className="w-full h-fit flex flex-col gap-3 fixed top-22 left-0 z-40 bg-white p-5"
-          initial={{opacity:0, y:-200}} animate={openMenu? {opacity:1, y:0}:{}} transition={{duration:0.2}} >
+        <motion.div className={`w-full h-fit flex flex-col gap-3 fixed top-22 left-0 z-40 bg-white p-5 
+          ${openMenu? '':'pointer-events-none'}`}
+          initial={{opacity:0, y:-200}} animate={openMenu? {opacity:1, y:0}:{}} transition={{duration:0.2, ease:'easeInOut'}} >
 
           <div className="w-full h-fit flex flex-col gap-5 border-b border-[#e6e6e6] pb-5">
 
