@@ -32,12 +32,12 @@ const Navbar = () => {
             <div className="w-fit h-full hidden md:flex items-center gap-3">
 
               <div className="w-fit h-[45px] flex items-center px-4 border border-[#d1d5db] rounded-xl cursor-pointer
-                hover:bg-[#737373]/10 transition-all duration-200">
+                hover:bg-[#737373]/10 transition-all duration-200 active:bg-[#737373]/10">
                 <p className="font-[500]">Sign In</p>
               </div>
 
               <div className="w-fit h-[42px] flex items-center px-4 border border-[#d1d5db] rounded-xl bg-[#285cb4] cursor-pointer
-                hover:bg-[#285cb4]/90 transition-all duration-200">
+                hover:bg-[#285cb4]/90 active:bg-[#285cb4]/90 transition-all duration-200">
                 <p className="font-[500] text-white">Get Started Free</p>
               </div>
 
@@ -60,7 +60,7 @@ const Navbar = () => {
         </div>
 
 
-        <motion.div className={`w-full h-fit flex flex-col gap-3 fixed top-22 left-0 z-40 bg-white p-5 
+        <motion.div className={`w-full h-fit flex flex-col md:hidden gap-3 fixed top-22 left-0 z-40 bg-white p-5 shadow-lg 
           ${openMenu? '':'pointer-events-none'}`}
           initial={{opacity:0, y:-200}} animate={openMenu? {opacity:1, y:0}:{}} transition={{duration:0.2, ease:'easeInOut'}} >
 
