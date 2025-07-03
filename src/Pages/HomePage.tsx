@@ -1,5 +1,6 @@
 import CreateSendTrackInvoices from "../Components/CreateSendTrackInvoices";
 import HeroButton from "../Components/HeroButton";
+import HowItWorksSecttion from "../Components/HowItWorksSecttion";
 import TextBox from "../Components/TextBox";
 import hero from "../assets/Images/hero-illustration.svg";
 import { motion } from "framer-motion";
@@ -65,6 +66,10 @@ const HomePage = () => {
 
 
       <CreateSendTrackInvoices/>
+
+
+      <HowItWorksSecttion/>
+
     </>
   )
 }

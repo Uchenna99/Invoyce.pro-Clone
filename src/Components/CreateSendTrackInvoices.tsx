@@ -23,7 +23,7 @@ const CreateSendTrackInvoices = () => {
     <>
         <div className="w-full h-fit flex justify-center bg-[#f5f5f5] px-4 py-22">
 
-            <div className="w-full xl:w-[1275px] flex flex-col gap-5 items-center">
+            <div className="w-full xl:w-[1280px] flex flex-col gap-5 items-center">
 
                 <TextBox texts="Features" />
 
@@ -43,7 +43,7 @@ const CreateSendTrackInvoices = () => {
                         cardData.map((card, index)=>(
                             
                             <HomeGridCard1
-                            key={index}
+                                key={index}
                                 icon={card.icon}
                                 heading={card.heading}
                                 info={card.info}
