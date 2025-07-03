@@ -14,7 +14,7 @@ const HomeGridCard1 = ({ icon, heading, info }:Card1) => {
         <div className={`bg-white rounded-2xl overflow-hidden flex items-end justify-end relative 
           transition-all duration-300 ease-in-out ${hover? 'shadow-md -translate-y-1':'shadow-sm'}`}>
           <div className={`w-64 h-64 rounded-full bg-[#ebeff7] absolute translate-x-1/2 translate-y-1/2 
-            ${hover? 'scale-105':''} transition-all duration-300 ease-in-out`}>
+            ${hover? 'scale-105':''} transition-all duration-400 ease-in-out`}>
           </div>
 
           <div className="w-full h-full relative z-20 flex flex-col gap-3 p-8 rounded-2xl"

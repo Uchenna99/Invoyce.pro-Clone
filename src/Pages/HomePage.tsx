@@ -9,8 +9,8 @@ import { motion } from "framer-motion";
 const HomePage = () => {
   return (
     <>
-      <div className="w-full h-fit lg:aspect-[3/1.85] xl:w-[1275px] flex max-lg:flex-col items-center justify-between gap-8 px-4 
-        max-lg:pt-24 max-md:pt-34">
+      <div className="w-full h-fit lg:aspect-[3/1.85] xl:w-[1280px] flex max-lg:flex-col items-center justify-between gap-8 max-xl:px-4 
+        max-md:pt-34 max-lg:pt-24">
 
         <div className="w-full lg:w-[520px] lg:min-w-[480px] h-fit flex flex-col gap-4">
 
@@ -48,7 +48,7 @@ const HomePage = () => {
             <div className="w-full sm:w-fit ">
               <HeroButton buttonText="Get Started for Free"/>
             </div>
-            <div className="w-full sm:w-fit h-[54px] flex items-center justify-center px-6 border border-[#d1d5db] rounded-xl cursor-pointer
+            <div className="w-full sm:w-fit h-[54px] flex items-center justify-center px-6 border border-[#e5e5e5] rounded-xl cursor-pointer
               hover:bg-[#737373]/10 active:bg-[#737373]/10 transition-all duration-200">
               <p className="font-medium text-lg">View Features</p>
             </div>

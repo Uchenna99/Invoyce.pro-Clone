@@ -16,7 +16,7 @@ const Navbar = () => {
 
             <div className="w-[140px] h-full flex items-center gap-3 transition-all duration-300 hover:scale-105 cursor-pointer">
               <img src={logo} alt="logo" className="w-9" />
-              <p className="text-xl text-[#0a0a0a] font-semibold">Invoyce</p>
+              <p className="text-xl text-[#0a0a0a] font-semibold tracking-tight">Invoyce</p>
             </div>
 
 
@@ -31,7 +31,7 @@ const Navbar = () => {
 
             <div className="w-fit h-full hidden md:flex items-center gap-3">
 
-              <div className="w-fit h-[45px] flex items-center px-4 border border-[#d1d5db] rounded-xl cursor-pointer
+              <div className="w-fit h-[42px] flex items-center px-4 border border-[#e5e5e5] rounded-xl cursor-pointer
                 hover:bg-[#737373]/10 transition-all duration-200 active:bg-[#737373]/10">
                 <p className="font-[500]">Sign In</p>
               </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
           </div>
 
 
-          <div className="w-full h-10 border border-[#e6e6e6] rounded-xl flex items-center justify-center active:bg-[#737373]/10 mt-1">
+          <div className="w-full h-10 border border-[#e5e5e5] rounded-xl flex items-center justify-center active:bg-[#737373]/10 mt-1">
             <p className="text-[#0a0a0a] font-medium">Sign In</p>
           </div>
 
