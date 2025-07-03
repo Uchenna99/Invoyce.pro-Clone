@@ -66,24 +66,24 @@ const Navbar = () => {
 
           <div className="w-full h-fit flex flex-col gap-5 border-b border-[#e6e6e6] pb-5">
 
-            <div className="w-full h-8 flex px-4 rounded-lg hover:bg-[#737373]/10">
+            <div className="w-full h-8 flex items-center px-4 rounded-lg active:bg-[#737373]/10">
               <p className="text-sm text-[#0a0a0a] font-medium">Features</p>
             </div>
-            <div className="w-full h-7 flex px-4 rounded-lg hover:bg-[#737373]/10">
+            <div className="w-full h-7 flex items-center px-4 rounded-lg active:bg-[#737373]/10">
               <p className="text-sm text-[#0a0a0a] font-medium">Pricing</p>
             </div>
-            <div className="w-full h-7 flex px-4 rounded-lg hover:bg-[#737373]/10">
+            <div className="w-full h-7 flex items-center px-4 rounded-lg active:bg-[#737373]/10">
               <p className="text-sm text-[#0a0a0a] font-medium">FAQ</p>
             </div>
 
           </div>
 
 
-          <div className="w-full h-10 border border-[#e6e6e6] rounded-xl flex items-center justify-center hover:bg-[#737373]/10 mt-1">
+          <div className="w-full h-10 border border-[#e6e6e6] rounded-xl flex items-center justify-center active:bg-[#737373]/10 mt-1">
             <p className="text-[#0a0a0a] font-medium">Sign In</p>
           </div>
 
-          <div className="w-full h-10 bg-[#285cb4] rounded-xl flex items-center justify-center hover:bg-[#285cb4]/90">
+          <div className="w-full h-10 bg-[#285cb4] rounded-xl flex items-center justify-center active:bg-[#285cb4]/90">
             <p className="text-white font-medium">Get Started Free</p>
           </div>
 
