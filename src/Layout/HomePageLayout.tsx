@@ -6,7 +6,7 @@ import Navbar from "../Components/Navbar";
 const HomePageLayout = () => {
   return (
     <>
-      <div className="w-full h-fit flex flex-col items-center bg-white px-4">
+      <div className="w-full h-fit flex flex-col items-center bg-white">
 
         <Navbar/>
 

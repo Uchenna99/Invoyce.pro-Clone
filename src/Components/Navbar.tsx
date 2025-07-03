@@ -14,7 +14,7 @@ const Navbar = () => {
 
           <div className="w-full xl:w-[1250px] h-full flex justify-between items-center">
 
-            <div className="w-[140px] h-full flex items-center gap-3">
+            <div className="w-[140px] h-full flex items-center gap-3 transition-all duration-300 hover:scale-105 cursor-pointer">
               <img src={logo} alt="logo" className="w-9" />
               <p className="text-xl text-[#0a0a0a] font-semibold">Invoyce</p>
             </div>
