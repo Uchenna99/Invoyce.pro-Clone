@@ -19,8 +19,8 @@ const NavLink = ({ linkText, onLinkClick }: Props) => {
                 {linkText} 
             </p>
 
-            <motion.div className="h-[3px] min-h-[3px] bg-[#285cb4]" 
-                initial={{width:0}} animate={highlight? {width:'100%'}:{}} transition={{duration:0.3, ease:'easeOut'}}
+            <motion.div className="h-[2.5px] min-h-[2.5px] bg-[#285cb4]" 
+                initial={{width:0}} animate={highlight? {width:'100%'}:{}} transition={{duration:0.2, ease:'easeOut'}}
             />
         </div>
     </>

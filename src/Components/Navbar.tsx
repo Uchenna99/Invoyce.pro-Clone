@@ -10,7 +10,7 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
-        <div className="w-full h-22 bg-white/90 flex justify-center fixed top-0 left-0 z-50 px-5">
+        <div className="w-full h-22 bg-white flex justify-center fixed top-0 left-0 z-50 px-4">
 
           <div className="w-full xl:w-[1250px] h-full flex justify-between items-center">
 
@@ -44,7 +44,7 @@ const Navbar = () => {
             </div>
 
 
-            <div className="w-fit h-fit flex md:hidden cursor-pointer" onClick={()=> setOpenMenu(!openMenu)}>
+            <div className="w-fit h-fit flex md:hidden cursor-pointer pr-1" onClick={()=> setOpenMenu(!openMenu)}>
               {
                 !openMenu &&
                 <img src={burger} alt="" />
