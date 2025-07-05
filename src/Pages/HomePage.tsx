@@ -1,5 +1,6 @@
 import CreateSendTrackInvoices from "../Components/CreateSendTrackInvoices";
 import FAQ from "../Components/FAQ";
+import Footer from "../Components/Footer";
 import HeroButton from "../Components/HeroButton";
 import HowItWorksSecttion from "../Components/HowItWorksSecttion";
 import TextBox from "../Components/TextBox";
@@ -77,7 +78,11 @@ const HomePage = () => {
 
       <TransparentPricingSection/>
 
+
       <FAQ/>
+
+
+      <Footer/>
 
     </>
   )
