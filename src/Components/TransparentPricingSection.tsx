@@ -10,7 +10,7 @@ const TransparentPricingSection = () => {
 
             <div className="w-full xl:w-[1280px] flex flex-col gap-5 items-center">
 
-                <TextBox texts="Transparent Pricing" colorScheme="primary" fontSize="small" />
+                <TextBox texts="Transparent Pricing" colorSelect="primary" fontSize="small" />
 
                 <div className="w-full h-fit flex flex-col gap-5 items-center">
                     <h2 className="text-3xl text-[#0a0a0a] text-center font-bold">

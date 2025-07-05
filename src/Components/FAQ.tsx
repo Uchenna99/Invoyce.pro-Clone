@@ -22,7 +22,7 @@ const FAQ = () => {
                 <div className="w-full md:w-[690px] h-fit flex flex-col gap-4 items-center">
                     <TextBox
                         texts="FAQ"
-                        colorScheme="primary"
+                        colorSelect="primary"
                         fontSize="small"
                     />
                     <h2 className="text-3xl text-[#0a0a0a] text-center font-bold">

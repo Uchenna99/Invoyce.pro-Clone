@@ -41,7 +41,7 @@ const TransactionFeeCard = () => {
                         </div>
 
                         <div className="flex justify-center items-center">
-                            <TextBox texts="1% Fee" colorScheme="secondary" fontSize="smaller" />
+                            <TextBox texts="1% Fee" colorSelect="secondary" fontSize="smaller" />
                         </div>
 
                         <div className="flex flex-col items-center">

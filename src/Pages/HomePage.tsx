@@ -22,7 +22,7 @@ const HomePage = () => {
             initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, ease:'easeInOut'}} >
             <TextBox
               texts="New: 1% Transaction Fee Model"
-              colorScheme="primary"
+              colorSelect="primary"
               fontSize="small"
             />
 

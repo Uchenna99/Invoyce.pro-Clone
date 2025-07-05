@@ -25,7 +25,7 @@ const CreateSendTrackInvoices = () => {
 
             <div className="w-full xl:w-[1280px] flex flex-col gap-5 items-center">
 
-                <TextBox texts="Features" colorScheme="primary" fontSize="small" />
+                <TextBox texts="Features" colorSelect="primary" fontSize="small" />
 
                 <div className="w-full md:w-[690px] h-fit flex flex-col gap-5 items-center">
                     <h2 className="text-4xl text-[#0a0a0a] text-center font-bold">
