@@ -20,6 +20,7 @@ const HomePage = () => {
             initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.5, ease:'easeInOut'}} >
             <TextBox
               texts="New: 1% Transaction Fee Model"
+              colorScheme="primary"
             />
 
             <h2 className="text-4xl md:text-5xl text-[#0a0a0a] font-bold leading-11 md:leading-15 mb-2 mt-1">
