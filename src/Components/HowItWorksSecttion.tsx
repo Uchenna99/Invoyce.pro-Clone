@@ -18,7 +18,7 @@ const HowItWorksSecttion = () => {
     <>
         <div className="w-full h-fit flex justify-center px-4 py-16">
 
-            <div className="w-full xl:w-[1275px] flex flex-col gap-5 items-center">
+            <div className="w-full xl:w-[1280px] flex flex-col gap-5 items-center">
 
                 <div className="w-full md:w-[690px] h-fit flex flex-col gap-4 items-center">
                     <h2 className="text-3xl text-[#0a0a0a] text-center font-bold">
