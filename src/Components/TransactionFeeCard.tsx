@@ -7,7 +7,7 @@ import HeroButton from "./HeroButton"
 const TransactionFeeCard = () => {
   return (
     <>
-        <div className="w-[770px] h-fit bg-white rounded-lg shadow-sm flex flex-col items-center mt-7">
+        <div className="w-full card:w-[770px] h-fit bg-white rounded-lg shadow-sm flex flex-col items-center mt-7">
 
             <div className="w-full h-fit flex flex-col border-b border-[#e5e5e5] items-center p-6 gap-1">
 
@@ -41,7 +41,7 @@ const TransactionFeeCard = () => {
                         </div>
 
                         <div className="flex justify-center items-center">
-                            <TextBox texts="1% Fee" colorScheme="secondary" />
+                            <TextBox texts="1% Fee" colorScheme="secondary" fontSize="smaller" />
                         </div>
 
                         <div className="flex flex-col items-center">
@@ -55,9 +55,9 @@ const TransactionFeeCard = () => {
 
                     </div>
 
-                    <div className="w-full h-fit grid grid-cols-2 gap-5">
+                    <div className="w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-5">
 
-                        <div className="flex justify-center">
+                        <div className="flex md:justify-center">
                             <div className="w-fit h-fit flex flex-col gap-2 text-[#0a0a0a]">
                                 <p className="font-medium mb-1">
                                     Everything Included:
@@ -81,7 +81,7 @@ const TransactionFeeCard = () => {
                             </div>
                         </div>
 
-                        <div className="flex justify-center">
+                        <div className="flex md:justify-center">
                             <div className="w-fit h-fit flex flex-col gap-2 text-[#0a0a0a]">
                                 <p className="font-medium mb-1">
                                     Also Included:

@@ -1,4 +1,5 @@
 import CreateSendTrackInvoices from "../Components/CreateSendTrackInvoices";
+import FAQ from "../Components/FAQ";
 import HeroButton from "../Components/HeroButton";
 import HowItWorksSecttion from "../Components/HowItWorksSecttion";
 import TextBox from "../Components/TextBox";
@@ -21,6 +22,7 @@ const HomePage = () => {
             <TextBox
               texts="New: 1% Transaction Fee Model"
               colorScheme="primary"
+              fontSize="small"
             />
 
             <h2 className="text-4xl md:text-5xl text-[#0a0a0a] font-bold leading-11 md:leading-15 mb-2 mt-1">
@@ -74,6 +76,8 @@ const HomePage = () => {
 
 
       <TransparentPricingSection/>
+
+      <FAQ/>
 
     </>
   )
