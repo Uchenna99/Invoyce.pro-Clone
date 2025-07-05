@@ -1,11 +1,13 @@
+import { Check } from "lucide-react"
 import TextBox from "./TextBox"
+import HeroButton from "./HeroButton"
 
 
 
 const TransactionFeeCard = () => {
   return (
     <>
-        <div className="w-[770px] h-fit bg-white rounded-lg shadow-sm flex flex-col items-center">
+        <div className="w-[770px] h-fit bg-white rounded-lg shadow-sm flex flex-col items-center mt-7">
 
             <div className="w-full h-fit flex flex-col border-b border-[#e5e5e5] items-center p-6 gap-1">
 
@@ -25,7 +27,7 @@ const TransactionFeeCard = () => {
 
             <div className="w-full h-fit p-6 flex flex-col">
 
-                <div className="w-full h-fit flex flex-col items-center gap-5 border-b border-[#e5e5e5]">
+                <div className="w-full h-fit flex flex-col items-center gap-10 pt-5 pb-6 border-b border-[#e5e5e5]">
 
                     <div className="w-full grid grid-cols-3 gap-5">
 
@@ -56,18 +58,68 @@ const TransactionFeeCard = () => {
                     <div className="w-full h-fit grid grid-cols-2 gap-5">
 
                         <div className="flex justify-center">
-                            <div className="w-fit h-fit flex flex-col">
-                                <p className="text-[#0a0a0a] font-medium">
+                            <div className="w-fit h-fit flex flex-col gap-2 text-[#0a0a0a]">
+                                <p className="font-medium mb-1">
                                     Everything Included:
                                 </p>
                                 <div className="flex items-center gap-2">
-                                    
+                                    <Check size={16} color="#285cb4" />
+                                    <p className="text-sm">Unlimited professional invoices</p>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Check size={16} color="#285cb4" />
+                                    <p className="text-sm">Custom branding & templates</p>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Check size={16} color="#285cb4" />
+                                    <p className="text-sm">Automatic payment reminders</p>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Check size={16} color="#285cb4" />
+                                    <p className="text-sm">Client trust metrics</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex justify-center">
+                            <div className="w-fit h-fit flex flex-col gap-2 text-[#0a0a0a]">
+                                <p className="font-medium mb-1">
+                                    Also Included:
+                                </p>
+                                <div className="flex items-center gap-2">
+                                    <Check size={16} color="#285cb4" />
+                                    <p className="text-sm">Multi-currency support</p>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Check size={16} color="#285cb4" />
+                                    <p className="text-sm">Advanced dashboard analytics</p>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Check size={16} color="#285cb4" />
+                                    <p className="text-sm">Paystack payment integration</p>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Check size={16} color="#285cb4" />
+                                    <p className="text-sm">Priority support</p>
                                 </div>
                             </div>
                         </div>
 
                     </div>
 
+                </div>
+
+
+                <div className="w-full h-fit flex flex-col items-center gap-3 pt-4">
+
+                    <div className="w-fit flex">
+                        <HeroButton 
+                            buttonText="Get Started"
+                        />
+                    </div>
+                    <p className="text-xs text-[#737373]">
+                        No credit card required • No hidden fees
+                    </p>
                 </div>
 
             </div>
