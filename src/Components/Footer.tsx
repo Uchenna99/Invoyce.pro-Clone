@@ -5,11 +5,11 @@ import logo from "../assets/Images/logo.svg"
 const Footer = () => {
   return (
     <>
-        <div className="w-full flex justify-center bg-[#f5f5f5]">
+        <div className="w-full flex justify-center bg-[#f5f5f5] border-t border-[#e5e5e5]">
 
             <div className="w-full xl:w-[1280px] h-fit flex max-md:flex-col items-center justify-between gap-6 px-4 py-8">
 
-                <div className="w-[125px] h-full flex items-center gap-2">
+                <div className="w-fit h-full flex items-center gap-2">
                     <img src={logo} alt="logo" className="w-6" />
                     <p className="text-[#0a0a0a] font-medium">Invoyce</p>
                 </div>
