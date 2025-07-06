@@ -1,4 +1,5 @@
-
+import { ChevronLeft } from "lucide-react";
+import logo from "../assets/Images/logo.svg"
 
 
 
@@ -9,7 +10,15 @@ const UserDashboardLayout = () => {
 
             <div className="w-[255px] h-full border-r border-[#e5e5e5] hidden lg:flex flex-col transition-all duration-300">
 
-                <div className="w-full h-16 border-b border-[#e5e5e5]"></div>
+                <div className="w-full h-16 border-b border-[#e5e5e5] flex items-center justify-between px-4">
+                    <div className="w-fit h-full flex items-center gap-2 cursor-pointer group">
+                        <img src={logo} alt="logo" className="w-[26px] group-hover:scale-110 transition-all duration-300" />
+                        <p className="text-lg text-[#285cb4] font-bold tracking-tight">Invoyce</p>
+                    </div>
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-[#f5f5f5] transition-all duration-300">
+                        <ChevronLeft size={16} color="#0a0a0a" />
+                    </div>
+                </div>
 
                 <div className="w-full h-[calc(100%-64px)] flex flex-col justify-between p-4">
 
