@@ -1,9 +1,12 @@
 import { ChevronLeft } from "lucide-react";
 import logo from "../assets/Images/logo.svg"
+import SectionSelect from "../Components/Dashboard/SectionSelect";
+import { useState } from "react";
 
 
 
 const UserDashboardLayout = () => {
+    const [selectedSection, setSelectedSection] = useState();
   return (
     <>
         <div className="w-full h-screen min-h-screen flex flex-row bg-white">
@@ -22,7 +25,12 @@ const UserDashboardLayout = () => {
 
                 <div className="w-full h-[calc(100%-64px)] flex flex-col justify-between p-4">
 
-                    <div className="w-full h-15 flex flex-col gap-1"></div>
+                    <div className="w-full h-fit flex flex-col gap-1">
+                        <SectionSelect
+                            name="Dashboard"
+                            state="active"
+                        />
+                    </div>
 
                     <div className="w-full h-14 bg-amber-100 flex border-t border-[#e5e5e5]"></div>
 
