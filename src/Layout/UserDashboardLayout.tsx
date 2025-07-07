@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 const UserDashboardLayout = () => {
-    const [selectedSection, setSelectedSection] = useState();
+    const [selectedSection, setSelectedSection] = useState('Dashboard');
   return (
     <>
         <div className="w-full h-screen min-h-screen flex flex-row bg-white">
@@ -28,7 +28,13 @@ const UserDashboardLayout = () => {
                     <div className="w-full h-fit flex flex-col gap-1">
                         <SectionSelect
                             name="Dashboard"
-                            state="active"
+                            currentSection={selectedSection}
+                            handleClick={()=> setSelectedSection('Dashboard')}
+                        />
+                        <SectionSelect
+                            name="Clients"
+                            currentSection={selectedSection}
+                            handleClick={()=> setSelectedSection('Clients')}
                         />
                     </div>
 

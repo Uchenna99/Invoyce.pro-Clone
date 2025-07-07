@@ -1,33 +1,27 @@
-import { LayoutDashboard } from "lucide-react";
+import SectionSelectActive from "./SectionSelectActive";
+import SectionSelectNull from "./SectionSelectNull";
 
 interface Props {
     name: string;
-    state: 'null' | 'hover' | 'active';
+    currentSection: string;
+    handleClick: ()=>void;
 }
 
-const SectionSelect = ({ name, state }:Props) => {
-    const colors = {null: '#4a5565', hover: '#0a0a0a', active: '#285cb4'};
-    const bgColors = {hover: '#f5f5f5', active: '#285bb41a'};
-
+const SectionSelect = ({ name, currentSection, handleClick }:Props) => {
 
   return (
     <>
-        <div className={`w-full h-10 flex items-center px-4 
-            ${state === 'hover'? bgColors.hover : state === 'active'? bgColors.active : ''}`}>
-
-            <LayoutDashboard 
-                size={20} 
-                color={
-                    state === 'hover'? colors.hover :
-                    state === 'active'? colors.active : ''
-                }
+        {
+            currentSection === name?
+            <SectionSelectActive
+                name={name}
             />
-
-            <p className="font-medium">
-                {name}
-            </p>
-
-        </div>
+            :
+            <SectionSelectNull
+                name={name}
+                handleClick={handleClick}
+            />
+        }
     </>
   )
 }
