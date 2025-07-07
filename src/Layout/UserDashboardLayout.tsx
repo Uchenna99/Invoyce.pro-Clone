@@ -1,16 +1,37 @@
 import { ChevronLeft } from "lucide-react";
 import logo from "../assets/Images/logo.svg"
 import SectionSelect from "../Components/Dashboard/SectionSelect";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SectionSelectNull from "../Components/Dashboard/SectionSelectNull";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 
 
 const UserDashboardLayout = () => {
+    const location = useLocation();
     const navigate = useNavigate();
     const [selectedSection, setSelectedSection] = useState('Dashboard');
     const [expand, setExpand] = useState(true);
+
+    useEffect(()=>{
+        switch (true) {
+            case location.pathname === '/dashboard':
+                if(selectedSection !== 'Dashboard') { setSelectedSection('Dashboard') };
+                break;
+            case location.pathname === '/dashboard/clients':
+                if(selectedSection !== 'Clients') { setSelectedSection('Clients') };
+                break;
+            case location.pathname === '/dashboard/invoices':
+                if(selectedSection !== 'Invoices') { setSelectedSection('Invoices') };
+                break;
+            case location.pathname === '/dashboard/transactions':
+                if(selectedSection !== 'Transactions') { setSelectedSection('Transactions') };
+                break;
+        
+            default:
+                break;
+        }
+    },[selectedSection])
 
   return (
     <>
@@ -41,19 +62,28 @@ const UserDashboardLayout = () => {
                             name="Dashboard"
                             currentSection={selectedSection}
                             expand={expand}
-                            handleClick={()=> setSelectedSection('Dashboard')}
+                            handleClick={()=> {
+                                setSelectedSection('Dashboard');
+                                selectedSection !== 'Dashboard'? navigate('/dashboard') : null;
+                            }}
                         />
                         <SectionSelect
                             name="Clients"
                             currentSection={selectedSection}
                             expand={expand}
-                            handleClick={()=> setSelectedSection('Clients')}
+                            handleClick={()=> {
+                                setSelectedSection('Clients');
+                                location.pathname !== '/dashboard/clients'? navigate('clients') : null;
+                            }}
                         />
                         <SectionSelect
                             name="Invoices"
                             currentSection={selectedSection}
                             expand={expand}
-                            handleClick={()=> setSelectedSection('Invoices')}
+                            handleClick={()=>{
+                                setSelectedSection('Invoices');
+                                selectedSection !== 'Invoices'? navigate('invoices') : null;
+                            }}
                         />
                         <SectionSelect
                             name="Transactions"
@@ -96,7 +126,7 @@ const UserDashboardLayout = () => {
                 </div>
 
 
-                <div className="w-full h-full overflow-y-scroll px-4">
+                <div className="w-full h-full overflow-y-scroll px-5">
                     <Outlet/>
                 </div>
 

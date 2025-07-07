@@ -3,6 +3,9 @@ import './App.css'
 import HomePageLayout from './Layout/HomePageLayout'
 import HomePage from './Pages/HomePage'
 import UserDashboardLayout from './Layout/UserDashboardLayout'
+import UserDashboardPage from './Pages/UserDashboardPage'
+import UserClientPage from './Pages/UserClientPage'
+import UserInvoicesPage from './Pages/UserInvoicesPage'
 
 
 function App() {
@@ -16,7 +19,9 @@ function App() {
         </Route>
 
         <Route path='/dashboard' element={<UserDashboardLayout/>}>
-        
+          <Route index element={<UserDashboardPage/>} />
+          <Route path='clients' element={<UserClientPage/>} />
+          <Route path='invoices' element={<UserInvoicesPage/>} />
         </Route>
 
       </Routes>
