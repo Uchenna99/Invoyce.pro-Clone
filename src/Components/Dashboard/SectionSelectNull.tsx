@@ -1,4 +1,4 @@
-import { CreditCard, FileText, LayoutDashboard, Settings, Users } from "lucide-react"
+import { CreditCard, FileText, LayoutDashboard, LogOut, Settings, Users } from "lucide-react"
 import { useState } from "react";
 
 interface Props {
@@ -40,6 +40,11 @@ const SectionSelectNull = ({ name, handleClick, expand }:Props) => {
                 name === 'Settings'?
                 <Settings 
                     size={20} 
+                    color={hovering? '#0a0a0a' : '#4a5565'}
+                /> :
+                name === 'Sign Out'?
+                <LogOut
+                    size={20}
                     color={hovering? '#0a0a0a' : '#4a5565'}
                 /> : null
             }

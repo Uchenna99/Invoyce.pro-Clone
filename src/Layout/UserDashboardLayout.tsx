@@ -2,10 +2,13 @@ import { ChevronLeft } from "lucide-react";
 import logo from "../assets/Images/logo.svg"
 import SectionSelect from "../Components/Dashboard/SectionSelect";
 import { useState } from "react";
+import SectionSelectNull from "../Components/Dashboard/SectionSelectNull";
+import { Outlet, useNavigate } from "react-router-dom";
 
 
 
 const UserDashboardLayout = () => {
+    const navigate = useNavigate();
     const [selectedSection, setSelectedSection] = useState('Dashboard');
     const [expand, setExpand] = useState(true);
 
@@ -25,9 +28,9 @@ const UserDashboardLayout = () => {
                             <p className="text-lg text-[#285cb4] font-bold tracking-tight">Invoyce</p>
                         }
                     </div>
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-[#f5f5f5] transition-all duration-300"
+                    <div className={`${expand? 'w-8 h-8':'w-6 h-6'} rounded-lg flex items-center justify-center hover:bg-[#f5f5f5] transition-all duration-300`}
                         onClick={()=>setExpand(!expand)}>
-                        <ChevronLeft size={16} color="#0a0a0a" />
+                        <ChevronLeft size={16} color="#0a0a0a" className={expand? '':'rotate-180'} />
                     </div>
                 </div>
 
@@ -66,7 +69,13 @@ const UserDashboardLayout = () => {
                         />
                     </div>
 
-                    <div className="w-full h-14 bg-amber-100 flex border-t border-[#e5e5e5]"></div>
+                    <div className="w-full h-15 flex border-t border-[#e5e5e5] items-center pt-3">
+                        <SectionSelectNull
+                            name="Sign Out"
+                            expand={expand}
+                            handleClick={()=> navigate('/')}
+                        />
+                    </div>
 
                 </div>
 
@@ -76,7 +85,20 @@ const UserDashboardLayout = () => {
 
             <div className="w-full lg:w-[calc(100%-255px)] h-full flex flex-col transition-all duration-300">
 
-                <div className="w-full h-16 flex border-b border-[#e5e5e5]"></div>
+                <div className="w-full h-16 flex border-b border-[#e5e5e5] items-center justify-end px-4">
+
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#285cb4]/10">
+                        <p className="text-sm text-[#285cb4] font-semibold">
+                            UA
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div className="w-full h-full overflow-y-scroll px-4">
+                    <Outlet/>
+                </div>
 
             </div>
 
