@@ -3,6 +3,7 @@ import DashLinksBox from "../Components/Dashboard/DashLinksBox";
 import { useContext } from "react";
 import { DashboardContext } from "../Layout/UserDashboardLayout";
 import RevenueOverview from "../Components/Dashboard/RevenueOverview";
+import BusinessSummary from "../Components/Dashboard/BusinessSummary";
 
 
 
@@ -23,7 +24,7 @@ const UserDashboardPage = () => {
             </div>
 
 
-            <div className="w-full h-fit grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="w-full h-fit grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-8">
 
                 <DashLinksBox
                     theme="blue" head="New Invoice" info="Create a new invoice"
@@ -43,6 +44,9 @@ const UserDashboardPage = () => {
                 />
                 
                 <RevenueOverview/>
+
+                <BusinessSummary/>
+
             </div>
 
 
