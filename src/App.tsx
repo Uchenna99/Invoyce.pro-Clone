@@ -6,6 +6,8 @@ import UserDashboardLayout from './Layout/UserDashboardLayout'
 import UserDashboardPage from './Pages/UserDashboardPage'
 import UserClientPage from './Pages/UserClientPage'
 import UserInvoicesPage from './Pages/UserInvoicesPage'
+import UserTransactionsPage from './Pages/UserTransactionsPage'
+import UserSettingsPage from './Pages/UserSettingsPage'
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
           <Route index element={<UserDashboardPage/>} />
           <Route path='clients' element={<UserClientPage/>} />
           <Route path='invoices' element={<UserInvoicesPage/>} />
+          <Route path='transactions' element={<UserTransactionsPage/>} />
+          <Route path='settings' element={<UserSettingsPage/>} />
         </Route>
 
       </Routes>

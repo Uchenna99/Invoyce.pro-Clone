@@ -27,11 +27,14 @@ const UserDashboardLayout = () => {
             case location.pathname === '/dashboard/transactions':
                 if(selectedSection !== 'Transactions') { setSelectedSection('Transactions') };
                 break;
+            case location.pathname === '/dashboard/settings':
+                if(selectedSection !== 'Settings') { setSelectedSection('Settings') };
+                break;
         
             default:
                 break;
         }
-    },[selectedSection])
+    },[])
 
   return (
     <>
@@ -82,20 +85,26 @@ const UserDashboardLayout = () => {
                             expand={expand}
                             handleClick={()=>{
                                 setSelectedSection('Invoices');
-                                selectedSection !== 'Invoices'? navigate('invoices') : null;
+                                location.pathname !== '/dashboard/invoices'? navigate('invoices') : null;
                             }}
                         />
                         <SectionSelect
                             name="Transactions"
                             currentSection={selectedSection}
                             expand={expand}
-                            handleClick={()=> setSelectedSection('Transactions')}
+                            handleClick={()=>{
+                                setSelectedSection('Transactions');
+                                location.pathname !== '/dashboard/transactions'? navigate('transactions') : null;
+                            }}
                         />
                         <SectionSelect
                             name="Settings"
                             currentSection={selectedSection}
                             expand={expand}
-                            handleClick={()=> setSelectedSection('Settings')}
+                            handleClick={()=>{
+                                setSelectedSection('Settings');
+                                location.pathname !== '/dashboard/settings'? navigate('settings') : null;
+                            }}
                         />
                     </div>
 
@@ -115,7 +124,7 @@ const UserDashboardLayout = () => {
 
             <div className="w-full lg:w-[calc(100%-255px)] h-full flex flex-col transition-all duration-300">
 
-                <div className="w-full h-16 flex border-b border-[#e5e5e5] items-center justify-end px-4">
+                <div className="w-full h-16 min-h-16 flex border-b border-[#e5e5e5] items-center justify-end px-4">
 
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#285cb4]/10">
                         <p className="text-sm text-[#285cb4] font-semibold">
