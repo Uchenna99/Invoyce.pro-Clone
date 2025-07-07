@@ -1,10 +1,14 @@
 import { ChevronLeft } from "lucide-react";
 import logo from "../assets/Images/logo.svg"
 import SectionSelect from "../Components/Dashboard/SectionSelect";
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import SectionSelectNull from "../Components/Dashboard/SectionSelectNull";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
+type ContextValues = {
+    changeSelectedSection: (section: string)=>void;
+}
+export const DashboardContext = createContext<ContextValues>({ changeSelectedSection: ()=>{} });
 
 
 const UserDashboardLayout = () => {
@@ -16,19 +20,19 @@ const UserDashboardLayout = () => {
     useEffect(()=>{
         switch (true) {
             case location.pathname === '/dashboard':
-                if(selectedSection !== 'Dashboard') { setSelectedSection('Dashboard') };
+                setSelectedSection('Dashboard');
                 break;
             case location.pathname === '/dashboard/clients':
-                if(selectedSection !== 'Clients') { setSelectedSection('Clients') };
+                setSelectedSection('Clients');
                 break;
             case location.pathname === '/dashboard/invoices':
-                if(selectedSection !== 'Invoices') { setSelectedSection('Invoices') };
+                setSelectedSection('Invoices');
                 break;
             case location.pathname === '/dashboard/transactions':
-                if(selectedSection !== 'Transactions') { setSelectedSection('Transactions') };
+                setSelectedSection('Transactions');
                 break;
             case location.pathname === '/dashboard/settings':
-                if(selectedSection !== 'Settings') { setSelectedSection('Settings') };
+                setSelectedSection('Settings');
                 break;
         
             default:
@@ -36,8 +40,13 @@ const UserDashboardLayout = () => {
         }
     },[])
 
+    const changeSelectedSection = (section: string)=>{
+        setSelectedSection(section);
+    };
+
   return (
     <>
+        <DashboardContext.Provider value={{ changeSelectedSection }}>
         <div className="w-full h-screen min-h-screen flex flex-row bg-white">
 
             <div className={`${expand? 'w-[256px]':'w-[72px]'} h-full border-r border-[#e5e5e5] hidden lg:flex flex-col 
@@ -45,7 +54,8 @@ const UserDashboardLayout = () => {
 
                 <div className={`w-full h-16 border-b border-[#e5e5e5] flex items-center justify-between 
                     ${expand? 'px-4':'pl-4 pr-1'}`}>
-                    <div className="w-fit h-full flex items-center gap-2 cursor-pointer group">
+                    <div className="w-fit h-full flex items-center gap-2 cursor-pointer group"
+                        onClick={()=> navigate('/')}>
                         <img src={logo} alt="logo" className="w-[26px] group-hover:scale-110 transition-all duration-300" />
                         {
                             expand &&
@@ -67,7 +77,7 @@ const UserDashboardLayout = () => {
                             expand={expand}
                             handleClick={()=> {
                                 setSelectedSection('Dashboard');
-                                selectedSection !== 'Dashboard'? navigate('/dashboard') : null;
+                                location.pathname !== '/dashboard'? navigate('/dashboard') : null;
                             }}
                         />
                         <SectionSelect
@@ -135,13 +145,14 @@ const UserDashboardLayout = () => {
                 </div>
 
 
-                <div className="w-full h-full overflow-y-scroll px-5">
+                <div className="w-full h-full overflow-y-scroll px-6">
                     <Outlet/>
                 </div>
 
             </div>
 
         </div>
+        </DashboardContext.Provider>
     </>
   )
 }

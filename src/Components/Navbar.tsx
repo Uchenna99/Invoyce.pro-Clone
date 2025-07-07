@@ -4,9 +4,11 @@ import burger from "../assets/Images/burger.svg"
 import close from "../assets/Images/close.svg"
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
@@ -32,7 +34,8 @@ const Navbar = () => {
             <div className="w-fit h-full hidden md:flex items-center gap-3">
 
               <div className="w-fit h-[42px] flex items-center px-4 border border-[#e5e5e5] rounded-xl cursor-pointer
-                hover:bg-[#737373]/10 transition-all duration-200 active:bg-[#737373]/10">
+                hover:bg-[#737373]/10 transition-all duration-200 active:bg-[#737373]/10"
+                onClick={()=> navigate('/dashboard')}>
                 <p className="font-[500]">Sign In</p>
               </div>
 
