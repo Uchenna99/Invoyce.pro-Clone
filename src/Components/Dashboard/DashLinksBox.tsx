@@ -11,7 +11,7 @@ interface Props {
 const DashLinksBox = ({ theme, head, info, icon, onClick }:Props) => {
   return (
     <>
-        <div className="flex items-center p-6 gap-3 rounded-xl shadow-sm border border-[#e5e5e5] hover:border-[#285cb4] 
+        <div className="flex items-center p-6 gap-3 rounded-xl shadow-sm border border-[#e5e5e5] hover:border-[#285cb4]/50 
             transition-all duration-300 cursor-pointer"
             onClick={onClick}>
 

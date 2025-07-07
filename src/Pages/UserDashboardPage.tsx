@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import DashLinksBox from "../Components/Dashboard/DashLinksBox";
 import { useContext } from "react";
 import { DashboardContext } from "../Layout/UserDashboardLayout";
+import RevenueOverview from "../Components/Dashboard/RevenueOverview";
 
 
 
@@ -41,6 +42,13 @@ const UserDashboardPage = () => {
                     icon="paid" onClick={()=>{}}
                 />
                 
+                <RevenueOverview/>
+            </div>
+
+
+            <div className="w-full h-fit grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-4">
+
+
             </div>
 
         </div>

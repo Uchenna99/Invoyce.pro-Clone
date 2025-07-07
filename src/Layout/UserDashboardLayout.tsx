@@ -132,9 +132,10 @@ const UserDashboardLayout = () => {
 
 
 
-            <div className="w-full lg:w-[calc(100%-255px)] h-full flex flex-col transition-all duration-300">
+            <div className="w-full lg:w-[calc(100%-255px)] h-full flex flex-col transition-all duration-300 overflow-y-auto relative">
 
-                <div className="w-full h-16 min-h-16 flex border-b border-[#e5e5e5] items-center justify-end px-4">
+                <div className="w-full h-16 min-h-16 flex border-b border-[#e5e5e5] items-center justify-end px-4 sticky 
+                    top-0 z-50 bg-white">
 
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#285cb4]/10">
                         <p className="text-sm text-[#285cb4] font-semibold">
@@ -145,7 +146,7 @@ const UserDashboardLayout = () => {
                 </div>
 
 
-                <div className="w-full h-full overflow-y-scroll px-6">
+                <div className="w-full h-full px-6">
                     <Outlet/>
                 </div>
 
