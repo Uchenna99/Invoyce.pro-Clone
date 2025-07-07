@@ -5,6 +5,7 @@ import { DashboardContext } from "../Layout/UserDashboardLayout";
 import RevenueOverview from "../Components/Dashboard/RevenueOverview";
 import BusinessSummary from "../Components/Dashboard/BusinessSummary";
 import RecentInvoices from "../Components/Dashboard/RecentInvoices";
+import RecentClients from "../Components/Dashboard/RecentClients";
 
 
 
@@ -25,7 +26,7 @@ const UserDashboardPage = () => {
             </div>
 
 
-            <div className="w-full h-fit grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-8">
+            <div className="w-full h-fit grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4 md:gap-y-8">
 
                 <DashLinksBox
                     theme="blue" head="New Invoice" info="Create a new invoice"
@@ -54,6 +55,8 @@ const UserDashboardPage = () => {
             <div className="w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-4">
 
                 <RecentInvoices/>
+
+                <RecentClients/>
 
             </div>
 

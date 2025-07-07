@@ -4,7 +4,7 @@ import { CircleDollarSign } from "lucide-react";
 const RevenueOverview = () => {
   return (
     <>
-        <div className="flex flex-col border border-[#e5e5e5] rounded-xl shadow-sm p-6 col-span-2 gap-7">
+        <div className="flex flex-col border border-[#e5e5e5] rounded-xl shadow-sm p-6 md:col-span-2 gap-7">
 
             <div className="flex flex-col">
                 <p className="text-[#0a0a0a] font-semibold leading-none mb-2">

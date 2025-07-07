@@ -16,7 +16,7 @@ const BusinessSummary = () => {
                     </p>
                 </div>
 
-                <div className="w-full flex items-center justify-between">
+                <div className="w-full flex items-center justify-between gap-2">
                     <p className="text-[#737373] text-sm">
                         Total Revenue
                     </p>
@@ -29,7 +29,7 @@ const BusinessSummary = () => {
 
             <div className="w-full flex flex-col py-4 gap-2">
 
-                <div className="w-full flex items-center justify-between">
+                <div className="w-full flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
                         <Wallet size={16} color="#737373"/>
                         <p className="text-[#737373] text-sm">Outstanding</p>
@@ -39,7 +39,7 @@ const BusinessSummary = () => {
                     </p>
                 </div>
 
-                <div className="w-full flex items-center justify-between">
+                <div className="w-full flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
                         <Clock size={16} color="#737373"/>
                         <p className="text-[#737373] text-sm">Overdue</p>
