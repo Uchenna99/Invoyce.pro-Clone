@@ -2,7 +2,7 @@ import logo from "../assets/Images/logo.svg"
 import NavLink from "./NavLink";
 import burger from "../assets/Images/burger.svg"
 import close from "../assets/Images/close.svg"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -10,9 +10,28 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
   const [openMenu, setOpenMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const triggerPoint = 20;
+
+      if (scrollPosition > triggerPoint) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
-        <div className="w-full h-22 bg-white flex justify-center fixed top-0 left-0 z-50 px-4">
+        <div className={`w-full h-22 bg-white flex justify-center fixed top-0 left-0 z-50 px-4 ${scrolled? 'shadow-sm':''} 
+          transition-all duration-300`}>
 
           <div className="w-full xl:w-[1250px] h-full flex justify-between items-center">
 
@@ -22,7 +41,7 @@ const Navbar = () => {
             </div>
 
 
-            <div className="w-fit h-full hidden md:flex items-center gap-10 pt-2">
+            <div className="w-fit h-full hidden md:flex items-center gap-10">
 
               <NavLink linkText="Features" onLinkClick={()=>{}} />
               <NavLink linkText="Pricing" onLinkClick={()=>{}} />

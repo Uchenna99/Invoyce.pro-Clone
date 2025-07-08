@@ -11,7 +11,7 @@ const NavLink = ({ linkText, onLinkClick }: Props) => {
 
   return (
     <>
-        <div className="w-fit h-fit flex flex-col gap-1 px-1 cursor-pointer"
+        <div className="w-fit h-fit flex flex-col gap-1 px-1 cursor-pointer relative"
             onMouseEnter={()=> setHighlight(true)} onMouseLeave={()=> setHighlight(false)}
             onClick={onLinkClick}>
 
@@ -19,7 +19,7 @@ const NavLink = ({ linkText, onLinkClick }: Props) => {
                 {linkText} 
             </p>
 
-            <motion.div className="h-[2.5px] min-h-[2.5px] bg-[#285cb4]" 
+            <motion.div className="h-[2px] min-h-[2px] bg-[#285cb4] absolute -bottom-2 left-0" 
                 initial={{width:0}} animate={highlight? {width:'100%'}:{}} transition={{duration:0.2, ease:'easeOut'}}
             />
         </div>

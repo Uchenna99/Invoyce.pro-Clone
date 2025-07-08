@@ -1,4 +1,4 @@
-import { FilePlus, Search } from "lucide-react";
+import { FilePlus, FileText, Search } from "lucide-react";
 import ItemsCount from "../Components/Dashboard/ItemsCount";
 import { useState } from "react";
 
@@ -62,7 +62,7 @@ const UserInvoicesPage = () => {
             </div>
 
             <div className="w-112 h-9 relative flex items-center">
-              <Search size={16} color="#99a1af" className="absolute left-3 mt-1"/>
+              <Search size={16} color="#99a1af" className="absolute left-3"/>
               <input type="text" placeholder="Search invoices..."
                 className="w-full h-full rounded-lg border-none pl-10 pr-4 text-sm text-[#0a0a0a] placeholder-[#737373] shadow-sm 
                 transition-all duration-300 outline outline-[#e5e5e5] focus:outline-[#285cb4] focus:ring-4 focus:ring-[#285cb4]/50"
@@ -71,8 +71,23 @@ const UserInvoicesPage = () => {
           </div>
 
 
+          <div className="w-full h-fit flex flex-col items-center justify-center rounded-md border border-[#e5e5e5] p-12 shadow-sm">
+            <div className="w-16 h-16 rounded-full bg-[#285cb4]/10 flex items-center justify-center mb-5">
+                <FileText size={32} color="#285cb4" />
+            </div>
+            <p className="text-[#0a0a0a] text-xl font-semibold mb-2">
+                No invoices yet
+            </p>
+            <p className="text-[#737373] text-sm mb-4 w-80 text-center">
+                Create your first invoice to get started. You can create, send, and track payments for your invoices here.
+            </p>
 
-          {/* <YourClients/> */}
+            <button className="w-fit px-3 flex items-center gap-4 bg-[#285cb4] hover:bg-[#285cb4]/90 text-white font-medium 
+                justify-center rounded-lg h-9 text-sm text-nowrap mt-1">
+                <FilePlus size={16} />
+                Create Invoice
+            </button>
+          </div>
 
         </div>
     </>

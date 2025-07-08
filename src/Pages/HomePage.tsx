@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 
 
 const HomePage = () => {
+
   return (
     <>
       <div className="w-full h-fit lg:aspect-[3/1.85] xl:w-[1280px] flex max-lg:flex-col items-center justify-between gap-8 max-xl:px-4 
