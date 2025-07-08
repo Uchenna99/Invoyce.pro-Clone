@@ -23,7 +23,7 @@ const RevenueOverview = () => {
                 <p className="text-[#0a0a0a] text-sm font-medium mb-1">
                     No revenue data yet
                 </p>
-                <p className="text-[#737373] text-sm">
+                <p className="text-[#737373] text-sm text-center">
                     Create and get paid for your first invoice to see your revenue chart
                 </p>
             </div>

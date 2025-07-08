@@ -12,6 +12,7 @@
 
 @theme {
   --breakpoint-xl: 1300px;
+  --breakpoint-lg: 1026px;
   --breakpoint-card: 820px;
 }
 

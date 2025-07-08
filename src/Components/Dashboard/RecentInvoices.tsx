@@ -30,7 +30,7 @@ const RecentInvoices = () => {
                 <p className="text-[#0a0a0a] font-medium mb-2">
                     No invoices yet
                 </p>
-                <p className="text-[#737373] text-sm">
+                <p className="text-[#737373] text-sm text-center">
                     Create your first invoice to get started
                 </p>
 

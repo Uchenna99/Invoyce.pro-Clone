@@ -10,7 +10,7 @@ const UserClientPage = () => {
     <>
         <div className="w-full h-fit flex flex-col py-4 gap-6">
 
-          <div className="w-full h-fit flex justify-between items-center">
+          <div className="w-full h-fit flex max-sm:flex-col justify-between sm:items-center gap-4">
 
             <div className="w-fit flex flex-col ">
               <h2 className="text-[#0a0a0a] text-2xl font-bold tracking-tight mb-1">
@@ -21,7 +21,7 @@ const UserClientPage = () => {
               </p>
             </div>
 
-            <button className="w-[112px] flex items-center gap-2 bg-[#285cb4] hover:bg-[#285cb4]/90 text-white font-medium 
+            <button className="sm:w-[112px] flex items-center gap-2 bg-[#285cb4] hover:bg-[#285cb4]/90 text-white font-medium 
               justify-center rounded-lg h-8 text-sm text-nowrap">
               <Plus size={16} />
               Add Client
@@ -30,12 +30,12 @@ const UserClientPage = () => {
           </div>
 
 
-          <div className="w-full h-fit flex gap-4">
+          <div className="w-full h-fit flex max-sm:flex-col gap-4">
 
-            <div className="h-9 flex-1 relative flex items-center">
+            <div className="h-9 max-sm:w-full flex-1 relative flex items-center">
               <Search size={16} color="#99a1af" className="absolute left-3 mt-1"/>
               <input type="text" placeholder="Search clients..."
-                className="w-full h-full rounded-lg border-none pl-10 pr-4 text-sm text-[#0a0a0a] placeholder-[#737373] shadow-xs 
+                className="w-full h-9 rounded-lg border-none pl-10 pr-4 md:text-sm text-[#0a0a0a] placeholder-[#737373] shadow-xs 
                 transition-all duration-300 outline outline-[#e5e5e5] focus:outline-[#285cb4] focus:ring-4 focus:ring-[#285cb4]/50"
               />
             </div>

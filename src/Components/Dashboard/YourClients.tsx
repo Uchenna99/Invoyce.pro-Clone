@@ -11,6 +11,7 @@ const YourClients = () => {
             setLoading(false);
         }, 1000);
     },[]);
+    
   return (
     <>
         <div className="flex flex-col border border-[#e5e5e5] rounded-xl shadow-sm p-6 md:col-span-2 gap-7">
@@ -36,7 +37,7 @@ const YourClients = () => {
                     <p className="text-[#0a0a0a] text-lg font-medium mb-1">
                         No clients yet
                     </p>
-                    <p className="text-[#737373] text-sm mb-4">
+                    <p className="text-[#737373] text-sm text-center mb-4">
                         Add your first client to start creating invoices
                     </p>
 

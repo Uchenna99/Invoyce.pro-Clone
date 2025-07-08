@@ -30,7 +30,7 @@ const RecentClients = () => {
                 <p className="text-[#0a0a0a] font-medium mb-2">
                     No clients yet
                 </p>
-                <p className="text-[#737373] text-sm">
+                <p className="text-[#737373] text-sm text-center">
                     Add your first client to get started
                 </p>
 

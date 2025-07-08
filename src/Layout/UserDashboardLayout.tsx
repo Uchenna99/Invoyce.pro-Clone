@@ -4,6 +4,7 @@ import SectionSelect from "../Components/Dashboard/SectionSelect";
 import { createContext, useEffect, useState } from "react";
 import SectionSelectNull from "../Components/Dashboard/SectionSelectNull";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import TabBar from "../Components/Dashboard/TabBar";
 
 type ContextValues = {
     changeSelectedSection: (section: string)=>void;
@@ -152,6 +153,8 @@ const UserDashboardLayout = () => {
                 </div>
 
             </div>
+
+            <TabBar currentSection={selectedSection} />
 
         </div>
         </DashboardContext.Provider>
