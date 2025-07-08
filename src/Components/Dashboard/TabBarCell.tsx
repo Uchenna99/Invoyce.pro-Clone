@@ -29,7 +29,7 @@ const TabBarCell = ({ name, currentSection, onClick }:Props) => {
                 <Settings size={20}/> : null
             }
             
-            <p className="text-[10px] text-xs">
+            <p className="text-[10px] text-xs max-[380px]:hidden">
                 {name}
             </p>
 
