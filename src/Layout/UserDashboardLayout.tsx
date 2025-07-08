@@ -132,7 +132,8 @@ const UserDashboardLayout = () => {
 
 
 
-            <div className="w-full lg:w-[calc(100%-255px)] h-full flex flex-col transition-all duration-300 overflow-y-auto relative">
+            <div className={`w-full h-full flex flex-col transition-all duration-300 overflow-y-auto relative 
+                ${expand? 'lg:w-[calc(100%-255px)]' : 'lg:w-[calc(100%-72px)]'}`}>
 
                 <div className="w-full h-16 min-h-16 flex border-b border-[#e5e5e5] items-center justify-end px-4 sticky 
                     top-0 z-50 bg-white">
