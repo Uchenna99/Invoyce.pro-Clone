@@ -33,7 +33,7 @@ const UserClientPage = () => {
           <div className="w-full h-fit flex gap-4">
 
             <div className="h-9 flex-1 relative flex items-center">
-              <Search size={16} color="#737373" className="absolute left-3"/>
+              <Search size={16} color="#99a1af" className="absolute left-3 mt-1"/>
               <input type="text" placeholder="Search clients..."
                 className="w-full h-full rounded-lg border-none pl-10 pr-4 text-sm text-[#0a0a0a] placeholder-[#737373] shadow-xs 
                 transition-all duration-300 outline outline-[#e5e5e5] focus:outline-[#285cb4] focus:ring-4 focus:ring-[#285cb4]/50"
