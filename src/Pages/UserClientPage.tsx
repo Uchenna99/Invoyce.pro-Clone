@@ -1,5 +1,6 @@
 import { LayoutGrid, List, Plus, Search } from "lucide-react";
 import { useState } from "react";
+import YourClients from "../Components/Dashboard/YourClients";
 
 
 
@@ -56,6 +57,9 @@ const UserClientPage = () => {
             </div>
 
           </div>
+
+
+          <YourClients/>
 
         </div>
     </>
