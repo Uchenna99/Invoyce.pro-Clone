@@ -154,7 +154,12 @@ const UserDashboardLayout = () => {
 
             </div>
 
-            <TabBar currentSection={selectedSection} />
+            <TabBar 
+                currentSection={selectedSection}
+                onClick={(section)=>{
+                    setSelectedSection(section);
+                }}
+            />
 
         </div>
         </DashboardContext.Provider>
