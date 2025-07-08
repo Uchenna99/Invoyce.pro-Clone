@@ -8,7 +8,7 @@ const UserClientPage = () => {
   const [layout, setLayout] = useState('grid');
   return (
     <>
-        <div className="w-full h-fit flex flex-col py-4 gap-6">
+        <div className="w-full h-fit flex flex-col max-lg:pb-20 py-4 gap-6">
 
           <div className="w-full h-fit flex max-sm:flex-col justify-between sm:items-center gap-4">
 

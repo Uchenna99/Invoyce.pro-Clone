@@ -16,7 +16,7 @@ const RevenueOverview = () => {
             </div>
 
 
-            <div className="w-full h-[300px] flex flex-col items-center justify-center bg-gray-50 rounded-lg">
+            <div className="w-full h-[300px] flex flex-col items-center justify-center bg-gray-50 rounded-lg p-2">
                 <div className="w-12 h-12 rounded-full bg-[#285cb4]/10 flex items-center justify-center mb-3">
                     <CircleDollarSign size={24} color="#285cb4" />
                 </div>

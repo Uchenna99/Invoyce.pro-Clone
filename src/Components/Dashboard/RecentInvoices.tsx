@@ -1,7 +1,10 @@
 import { FileText } from "lucide-react";
 
+interface Props {
+    onClick: ()=>void;
+}
 
-const RecentInvoices = () => {
+const RecentInvoices = ({ onClick }:Props) => {
   return (
     <>
         <div className="flex flex-col border border-[#e5e5e5] rounded-xl shadow-sm p-6 gap-7">
@@ -35,7 +38,8 @@ const RecentInvoices = () => {
                 </p>
 
                 <div className="w-fit min-h-8 px-3 flex items-center text-white bg-[#285cb4] hover:bg-[#285cb4]/90 
-                    rounded-lg cursor-pointer mt-4 transition-all duration-200">
+                    rounded-lg cursor-pointer mt-4 transition-all duration-200"
+                    onClick={onClick}>
                     <p className="text-sm font-semibold">Create Invoice</p>
                 </div>
             </div>

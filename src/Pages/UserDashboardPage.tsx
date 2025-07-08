@@ -29,7 +29,7 @@ const UserDashboardPage = () => {
                 <Loader size={8} />
             </div>
             :
-            <div className="w-full h-fit flex flex-col py-4 gap-8">
+            <div className="w-full h-fit flex flex-col max-lg:pb-20 py-4 gap-8 ">
 
                 <div className="flex flex-col">
                     <h2 className="text-[#0a0a0a] text-2xl font-bold tracking-tight mb-1">
@@ -51,13 +51,13 @@ const UserDashboardPage = () => {
                         theme="blue"
                         head="Add Client"
                         info="Create a new client"
-                        icon="client" onClick={()=>{}}
+                        icon="client" onClick={()=>{ changeSelectedSection('Clients'); navigate('clients') }}
                     />
                     <DashLinksBox
                         theme="green"
                         head="Paid"
                         info="0 invoices paid"
-                        icon="paid" onClick={()=>{}}
+                        icon="paid" onClick={()=>{ changeSelectedSection('Invoices'); navigate('invoices') }}
                     />
                     
                     <RevenueOverview/>
@@ -69,9 +69,13 @@ const UserDashboardPage = () => {
 
                 <div className="w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                    <RecentInvoices/>
+                    <RecentInvoices
+                        onClick={()=>{ changeSelectedSection('Invoices'); navigate('invoices') }}
+                    />
 
-                    <RecentClients/>
+                    <RecentClients
+                        onClick={()=>{ changeSelectedSection('Clients'); navigate('clients') }}
+                    />
 
                 </div>
 

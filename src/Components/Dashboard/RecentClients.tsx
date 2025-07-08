@@ -1,7 +1,10 @@
 import { Users } from "lucide-react";
 
+interface Props {
+    onClick: ()=>void;
+}
 
-const RecentClients = () => {
+const RecentClients = ({ onClick }:Props) => {
   return (
     <>
         <div className="flex flex-col border border-[#e5e5e5] rounded-xl shadow-sm p-6 gap-7">
@@ -35,7 +38,8 @@ const RecentClients = () => {
                 </p>
 
                 <div className="w-fit min-h-8 px-3 flex items-center text-white bg-[#285cb4] hover:bg-[#285cb4]/90 
-                    rounded-lg cursor-pointer mt-4 transition-all duration-200">
+                    rounded-lg cursor-pointer mt-4 transition-all duration-200"
+                    onClick={onClick}>
                     <p className="text-sm font-semibold">Add Client</p>
                 </div>
             </div>

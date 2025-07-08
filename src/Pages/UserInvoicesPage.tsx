@@ -17,7 +17,7 @@ const UserInvoicesPage = () => {
 
   return (
     <>
-        <div className="w-full h-fit flex flex-col py-4 gap-6">
+        <div className="w-full h-fit flex flex-col max-lg:pb-20 py-4 gap-6">
 
           <div className="w-full h-fit flex justify-between items-center gap-4">
 

@@ -136,8 +136,14 @@ const UserDashboardLayout = () => {
             <div className={`w-full h-full flex flex-col transition-all duration-300 overflow-y-auto relative 
                 ${expand? 'lg:w-[calc(100%-255px)]' : 'lg:w-[calc(100%-72px)]'}`}>
 
-                <div className="w-full h-16 min-h-16 flex border-b border-[#e5e5e5] items-center justify-end px-4 sticky 
-                    top-0 z-50 bg-white">
+                <div className="w-full h-16 min-h-16 flex border-b border-[#e5e5e5] items-center justify-between lg:justify-end 
+                    px-4 sticky top-0 z-50 bg-white">
+
+                    <div className="w-fit h-full flex items-center gap-2 cursor-pointer group lg:hidden"
+                        onClick={()=> navigate('/')}>
+                        <img src={logo} alt="logo" className="w-[26px] group-hover:scale-110 transition-all duration-300" />
+                        <p className="text-lg text-[#285cb4] font-bold tracking-tight">Invoyce</p>
+                    </div>
 
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#285cb4]/10">
                         <p className="text-sm text-[#285cb4] font-semibold">

@@ -3,7 +3,7 @@
 const UserTransactionsPage = () => {
   return (
     <>
-        <p>Transactions</p>
+        <p>Transactions Page</p>
     </>
   )
 }

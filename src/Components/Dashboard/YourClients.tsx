@@ -30,7 +30,7 @@ const YourClients = () => {
                     <Loader size={6}/>
                 </div>
                 :
-                <div className="w-full h-fit flex flex-col items-center justify-center rounded-md border border-[#e5e5e5] p-8">
+                <div className="w-full h-fit flex flex-col items-center justify-center rounded-md border border-[#e5e5e5] py-8 px-4">
                     <div className="w-12 h-12 rounded-full bg-[#285cb4]/10 flex items-center justify-center mb-3">
                         <User size={24} color="#285cb4" />
                     </div>

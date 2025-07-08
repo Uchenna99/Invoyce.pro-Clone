@@ -3,7 +3,7 @@
 const UserSettingsPage = () => {
   return (
     <>
-        <p>Settings</p>
+        <p>Settings Page</p>
     </>
   )
 }
