@@ -1,16 +1,15 @@
+import { motion } from "framer-motion";
 import { Check, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { motion } from "framer-motion";
 
-
-const TransactionsDropdownMenu = () => {
-    const [selected, setSelected] = useState('All Transactions');
+const CurrencyDropdownMenu = () => {
+    const [selected, setSelected] = useState('Nigerian Naira (₦)');
     const [active, setActive] = useState(false);
-    const options = ['All Transactions', 'Payments', 'Platform Fees']
+    const options = ['Nigerian Naira (₦)', 'Ghanaian Cedi (₵)', 'Kenyan Shilling (KSh)', 'US Dollar ($)'];
 
   return (
     <>
-        <div className="w-full sm:w-45 h-9 rounded-lg border border-border flex items-center justify-between px-3 cursor-default relative"
+        <div className="w-fit h-9 rounded-lg border border-border flex items-center justify-between gap-2 px-3 cursor-default relative"
             onClick={()=> setActive(!active)} tabIndex={-1} onBlur={()=> active? setActive(false):null}>
 
             <p className="text-sm text-text-black">
@@ -24,10 +23,10 @@ const TransactionsDropdownMenu = () => {
 
                 {
                     options.map((option, index)=>(
-                        <div className="w-full h-8 rounded-md flex items-center justify-between px-2 hover:bg-accent 
+                        <div className="w-fit h-8 rounded-md flex items-center justify-between gap-2 px-2 hover:bg-accent 
                             transition-all duration-200"
                             onClick={()=> selected !== option? setSelected(option) : null} key={index}>
-                            <p className="text-sm text-text-black">
+                            <p className="text-sm text-text-black text-nowrap">
                                 {option}
                             </p>
                             { selected === option && <Check size={16} color="#737373"/> }
@@ -43,4 +42,4 @@ const TransactionsDropdownMenu = () => {
   )
 }
 
-export default TransactionsDropdownMenu;
+export default CurrencyDropdownMenu;
