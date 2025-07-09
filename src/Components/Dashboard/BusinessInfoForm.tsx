@@ -50,7 +50,7 @@ const BusinessInfoForm = () => {
                 <div className="flex flex-col gap-[6px] w-full">
                     <label htmlFor="3" className="text-sm font-medium">Business Logo</label>
                     <input type="file" id="3" 
-                        className="w-full h-9 rounded-lg border-none px-3 py-2 md:text-sm text-[#0a0a0a] shadow-xs font-medium 
+                        className="w-full h-9 rounded-lg border-none px-3 py-2 text-sm text-[#0a0a0a] shadow-xs font-medium 
                         transition-all duration-300 outline outline-[#e5e5e5] focus:outline-[#285cb4] focus:ring-4 focus:ring-[#285cb4]/50 
                         flex items-center"
                     />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProfileForm from "../Components/Dashboard/ProfileForm";
 import BusinessInfoForm from "../Components/Dashboard/BusinessInfoForm";
+import InvoiceForm from "../Components/Dashboard/InvoiceForm";
 
 
 const UserSettingsPage = () => {
@@ -9,7 +10,7 @@ const UserSettingsPage = () => {
   
   return (
     <>
-        <div className="w-full h-fit flex flex-col pb-8 max-lg:pb-20 pt-4 gap-6 ">
+        <div className="w-full h-fit flex flex-col pb-8 max-lg:pb-30 pt-4 gap-6 ">
 
           <div className="flex flex-col">
               <h2 className="text-[#0a0a0a] text-2xl font-bold tracking-tight">
@@ -41,6 +42,9 @@ const UserSettingsPage = () => {
             :
             selectedTab === 'Business'?
             <BusinessInfoForm/>
+            :
+            selectedTab === 'Invoice'?
+            <InvoiceForm/>
             :
             null
           }
