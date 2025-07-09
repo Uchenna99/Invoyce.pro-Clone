@@ -12,8 +12,18 @@
 
 @theme {
   --breakpoint-xl: 1300px;
+  --breakpoint-sm: 642px;
+  --breakpoint-md: 770px;
   --breakpoint-lg: 1026px;
   --breakpoint-card: 820px;
+
+  --color-primary: #285cb4;
+  --color-border: #e5e5e5;
+  --color-text-black: #0a0a0a;
+  --color-text-gray: #737373;
+  --color-accent: #f5f5f5;
+  --color-inactive: #4a5565;
+  --color-shadow: #0000001a;
 }
 
 *{
