@@ -10,7 +10,7 @@ const TransactionsDropdownMenu = () => {
 
   return (
     <>
-        <div className="w-45 h-9 rounded-lg border border-border flex items-center justify-between px-3 cursor-default relative"
+        <div className="w-full sm:w-45 h-9 rounded-lg border border-border flex items-center justify-between px-3 cursor-default relative"
             onClick={()=> setActive(!active)}>
 
             <p className="text-sm text-text-black">

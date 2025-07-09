@@ -48,7 +48,7 @@ const TransactionHistory = () => {
 
             <div className="w-full flex flex-col border border-border rounded-xl px-6 py-6 shadow-sm gap-6">
 
-                <div className="w-full flex justify-between">
+                <div className="w-full flex flex-col md:flex-row justify-between gap-4 md:gap-3">
 
                     <div className="flex flex-col pt-2">
                         <p className="text-text-black font-semibold mb-2 leading-0">
@@ -59,9 +59,9 @@ const TransactionHistory = () => {
                         </p>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-col sm:flex-row items-center gap-2">
 
-                        <div className="h-9 w-full sm:w-60 relative flex items-center">
+                        <div className="h-9 w-full sm:w-65 md:w-60 relative flex items-center">
                             <Search size={16} color="#737373" className="absolute left-2"/>
                             <input type="text" placeholder="Search transactions..."
                                 className="w-full h-9 rounded-lg border-none pl-9 pr-4 md:text-sm text-[#0a0a0a] placeholder-[#737373] shadow-xs 
