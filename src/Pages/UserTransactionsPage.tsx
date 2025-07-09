@@ -8,7 +8,7 @@ const UserTransactionsPage = () => {
 
   return (
     <>
-      <div className="w-full h-fit flex flex-col max-lg:pb-20 py-4 gap-6 ">
+      <div className="w-full h-fit flex flex-col max-lg:pb-20 py-4 gap-6">
 
         <div className="flex flex-col">
           <h2 className="text-[#0a0a0a] text-2xl font-semibold tracking-tight mb-1">
@@ -20,7 +20,7 @@ const UserTransactionsPage = () => {
         </div>
 
 
-        <div className="w-full h-14 flex gap-8 border-b border-border pb-[1px] mb-2">
+        <div className="w-full h-14 flex gap-4 md:gap-8 border-b border-border pb-[1px] mb-2">
 
           <div className={`flex-1 flex items-center justify-center gap-2 rounded-md relative z-20 transition-all duration-300 cursor-default 
             ${active === 1? 'shadow-sm shadow-shadow text-text-black' : 'text-text-gray hover:text-text-black'}`}
