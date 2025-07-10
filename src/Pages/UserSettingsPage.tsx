@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProfileForm from "../Components/Dashboard/ProfileForm";
 import BusinessInfoForm from "../Components/Dashboard/BusinessInfoForm";
 import InvoiceForm from "../Components/Dashboard/InvoiceForm";
+import PayoutsInformation from "../Components/Dashboard/PayoutsInformation";
 
 
 const UserSettingsPage = () => {
@@ -45,6 +46,9 @@ const UserSettingsPage = () => {
             :
             selectedTab === 'Invoice'?
             <InvoiceForm/>
+            :
+            selectedTab === 'Payouts'?
+            <PayoutsInformation/>
             :
             null
           }
