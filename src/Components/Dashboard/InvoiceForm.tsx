@@ -15,9 +15,9 @@ const InvoiceForm = () => {
             </div>
 
 
-            <div className="w-full flex gap-4">
+            <div className="w-full flex flex-col md:flex-row gap-4">
 
-                <div className="flex flex-col gap-[6px] w-1/2">
+                <div className="flex flex-col gap-[6px] w-full md:w-1/2">
                     <label htmlFor="1" className="text-sm font-medium">Default Due Date (Days)</label>
                     <div className="flex items-center relative">
                         <Calendar size={16} color="#99a1af" className="absolute left-3"/>
@@ -31,10 +31,16 @@ const InvoiceForm = () => {
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-[6px] w-1/2">
+                <div className="flex flex-col gap-[6px] w-full md:w-1/2">
                     <label htmlFor="" className="text-sm font-medium">Payment Reminder Days</label>
                     <div className="flex items-center gap-2 flex-wrap">
-                        <PaymentReminderButton label="3 days before" active/>
+                        <PaymentReminderButton active={false} label="3 days before" />
+                        <PaymentReminderButton active={false} label="1 day before" />
+                        <PaymentReminderButton active label="On due date" />
+                        <PaymentReminderButton active label="1 day after" />
+                        <PaymentReminderButton active label="3 days after" />
+                        <PaymentReminderButton active={false} label="5 days before" />
+                        <PaymentReminderButton active={false} label="7 days before" />
                     </div>
                     <p className="text-[0.8rem] text-text-gray mt-[2px]">
                         Select when to send payment reminders relative to due date
