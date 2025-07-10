@@ -159,7 +159,8 @@ const PayoutsInformation = () => {
                 <p className="text-text-gray">
                     If you have any questions about how the Paystack subaccount system works, issues with receiving funds, or need to update your bank information, our support team is ready to assist you.
                 </p>
-                <div className="w-fit h-8 border border-border rounded-lg flex items-center justify-center px-3">
+                <div className="w-fit h-8 border border-border rounded-lg flex items-center justify-center px-3 hover:bg-accent
+                    transition-all duration-200 cursor-default">
                     <p className="text-text-black font-medium text-sm">Contact Support</p>
                 </div>
             </div>
