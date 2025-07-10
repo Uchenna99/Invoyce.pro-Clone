@@ -1,8 +1,11 @@
 import { Calendar } from "lucide-react";
 import PaymentReminderButton from "./PaymentReminderButton";
+import ToggleButton from "./ToggleButton";
+import { useState } from "react";
 
 
 const InvoiceForm = () => {
+    const [toggle, setToggle] = useState(true);
   return (
     <>
         <div className="w-full border border-border rounded-xl shadow shadow-shadow px-6 py-5 flex flex-col gap-5">
@@ -39,14 +42,35 @@ const InvoiceForm = () => {
                         <PaymentReminderButton active label="On due date" />
                         <PaymentReminderButton active label="1 day after" />
                         <PaymentReminderButton active label="3 days after" />
-                        <PaymentReminderButton active={false} label="5 days before" />
-                        <PaymentReminderButton active={false} label="7 days before" />
+                        <PaymentReminderButton active={false} label="5 days after" />
+                        <PaymentReminderButton active={false} label="7 days after" />
                     </div>
                     <p className="text-[0.8rem] text-text-gray mt-[2px]">
                         Select when to send payment reminders relative to due date
                     </p>
                 </div>
 
+            </div>
+
+
+            <div className="w-full flex justify-between items-center gap-2">
+
+                <div className="flex flex-col cursor-pointer" onClick={()=> setToggle(!toggle)}>
+                    <p className="text-sm font-medium">Automatic Reminders</p>
+                    <p className="text-[0.8rem] text-text-gray font-medium -mt-0.5">
+                        Send automatic email reminders for invoices
+                    </p>
+                </div>
+
+                <ToggleButton toggle={toggle} change={()=> setToggle(!toggle)} />
+            </div>
+
+
+            <div className="w-full flex justify-end">
+                <button className="w-fit flex items-center bg-primary hover:bg-primary/90 text-white font-medium px-4 
+                    justify-center rounded-lg h-9 text-sm text-nowrap mb-1">
+                    Save Changes
+                </button>
             </div>
 
         </div>

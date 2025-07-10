@@ -17,13 +17,13 @@ const CurrencyDropdownMenu = () => {
             </p>
             <ChevronDown size={16} color="#b9b9b9"/>
 
-            <motion.div className="w-full rounded-lg bg-white border border-border flex flex-col absolute top-10 left-0 z-10 p-1"
+            <motion.div className="w-fit rounded-lg bg-white border border-border flex flex-col absolute top-10 left-0 z-10 p-1"
                 initial={{opacity:0, y:-10, pointerEvents:'none'}} animate={active? {opacity:1, y:0, pointerEvents:'auto'}:{}} 
                 transition={{duration:0.2, ease:'easeInOut'}} >
 
                 {
                     options.map((option, index)=>(
-                        <div className="w-fit h-8 rounded-md flex items-center justify-between gap-2 px-2 hover:bg-accent 
+                        <div className="w-full h-8 rounded-md flex items-center justify-between gap-3 px-2 hover:bg-accent 
                             transition-all duration-200"
                             onClick={()=> selected !== option? setSelected(option) : null} key={index}>
                             <p className="text-sm text-text-black text-nowrap">
