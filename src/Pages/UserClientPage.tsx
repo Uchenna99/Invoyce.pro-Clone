@@ -1,11 +1,14 @@
 import { LayoutGrid, List, Plus, Search } from "lucide-react";
 import { useState } from "react";
 import YourClients from "../Components/Dashboard/YourClients";
+import AddClientForm from "../Components/Dashboard/AddClientForm";
 
 
 
 const UserClientPage = () => {
   const [layout, setLayout] = useState('grid');
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <>
         <div className="w-full h-fit flex flex-col max-lg:pb-20 py-4 gap-6">
@@ -22,7 +25,7 @@ const UserClientPage = () => {
             </div>
 
             <button className="sm:w-[112px] flex items-center gap-2 bg-[#285cb4] hover:bg-[#285cb4]/90 text-white font-medium 
-              justify-center rounded-lg h-8 text-sm text-nowrap">
+              justify-center rounded-lg h-8 text-sm text-nowrap" onClick={()=> setShowForm(true)}>
               <Plus size={16} />
               Add Client
             </button>
@@ -60,6 +63,13 @@ const UserClientPage = () => {
 
 
           <YourClients/>
+
+          {
+            showForm && 
+            <AddClientForm
+                close={()=> setShowForm(false)}
+            />
+          }
 
         </div>
     </>

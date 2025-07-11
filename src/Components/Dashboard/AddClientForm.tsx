@@ -10,20 +10,29 @@ const AddClientForm = ({ close }:Props) => {
     const closeRef = useRef<HTMLDivElement>(null);
     const [buttonActive, setButtonActive] = useState(false);
     const [clientName, setClientName] = useState('');
-
+    const [email, setEmail] = useState('');
 
     useEffect(()=>{
         closeRef.current?.focus();
     },[]);
 
+    useEffect(()=>{
+        if(clientName.length >2 && email.includes('@') && email.includes('.')) {
+            if(!buttonActive) { setButtonActive(true) }
+        }else{
+            if(buttonActive) { setButtonActive(false) }
+        }
+    },[clientName, email]);
+
   return (
     <>
         <div className="w-full h-screen fixed top-0 left-0 z-50 bg-black/50 flex items-center justify-center" onClick={close}></div>
 
-        <div className="flex p-5 fixed z-100 top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2">
+        <div className="w-full flex justify-center p-5 fixed z-100 left-0 top-1/2 right-1/2 -translate-y-1/2">
 
-            <motion.div className="w-[448px] max-w-full bg-white rounded-lg p-5 flex flex-col gap-3 relative"
-                initial={{opacity:0, scale:0.9}} animate={{opacity:1, scale:1}} >
+            <motion.div className="w-full sm:w-[448px] bg-white rounded-lg p-5 flex flex-col gap-3 relative 
+                transition-all duration-200"
+                initial={{opacity:0, scale:0.9}} animate={{opacity:1, scale:1}} transition={{duration:0}} >
 
                 <div className="flex absolute top-5 right-5 p-0.5 rounded-lg focus:ring-2 focus:ring-[#285cb4]/70" 
                     ref={closeRef} tabIndex={-1}>
@@ -55,6 +64,8 @@ const AddClientForm = ({ close }:Props) => {
                         <div className="flex items-center relative">
                             <Mail size={16} color="#99a1af" className="absolute left-3"/>
                             <input type="email" id="2" placeholder="client@company.com"
+                                value={email}
+                                onChange={(e)=> setEmail(e.target.value)}
                                 className="w-full h-10 rounded-lg border-none pl-10 pr-4 md:text-sm text-[#0a0a0a] placeholder-[#737373] shadow-xs 
                                 transition-all duration-300 outline outline-[#e5e5e5] focus:outline-[#285cb4] focus:ring-4 focus:ring-[#285cb4]/50"
                             />
@@ -92,7 +103,7 @@ const AddClientForm = ({ close }:Props) => {
                     </div>
                 </div>
 
-                <div className="w-full flex justify-end items-center gap-3">
+                <div className="w-full flex flex-col-reverse sm:flex-row justify-end items-center gap-3">
                     <button className="w-fit h-8 flex items-center justify-center px-3 border border-border rounded-lg hover:bg-accent 
                         transition-all duration-200" onClick={close}>
                         <p className="text-sm text-text-black font-medium">Cancel</p>
