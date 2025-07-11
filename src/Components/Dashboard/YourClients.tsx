@@ -1,10 +1,12 @@
 import { Plus, User } from "lucide-react";
 import { useEffect, useState } from "react";
 import Loader from "../Loader";
+import AddClientForm from "./AddClientForm";
 
 
 const YourClients = () => {
     const [loading, setLoading] = useState(true);
+    const [showForm, setShowForm] = useState(false);
 
     useEffect(()=>{
         setTimeout(() => {
@@ -42,11 +44,19 @@ const YourClients = () => {
                     </p>
 
                     <button className="w-[112px] flex items-center gap-2 bg-[#285cb4] hover:bg-[#285cb4]/90 text-white font-medium 
-                        justify-center rounded-lg h-8 text-sm text-nowrap">
+                        justify-center rounded-lg h-8 text-sm text-nowrap"
+                        onClick={()=> setShowForm(true)}>
                         <Plus size={16} />
                         Add Client
                     </button>
                 </div>
+            }
+
+            {
+                showForm && 
+                <AddClientForm
+                    close={()=> setShowForm(false)}
+                />
             }
 
         </div>

@@ -24,6 +24,7 @@
   --color-accent: #f5f5f5;
   --color-inactive: #4a5565;
   --color-shadow: #0000001a;
+  --color-error1: #fb2c36;
 }
 
 *{
@@ -44,3 +45,4 @@
 /* text-gray- #737373 */
 /* gray accent - #f5f5f5 */
 /* inactive text - #4a5565 */
+/* error - #fb2c36 */
