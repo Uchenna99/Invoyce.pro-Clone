@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Building2, Mail, MapPin, Phone, User, X } from "lucide-react";
+import { Mail, MapPin, Phone, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import SelectorWithSearch from "./SelectorWithSearch";
 
@@ -29,7 +29,7 @@ const AddBankAccountForm = ({ close }:Props) => {
     <>
         <div className="w-full h-screen fixed top-0 left-0 z-50 bg-black/50 flex items-center justify-center" onClick={close}></div>
 
-        <div className="w-full flex justify-center p-5 fixed z-100 left-0 top-1/2 right-1/2 -translate-y-1/2">
+        <div className="w-fit flex justify-center p-5 fixed z-100 top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2">
 
             <motion.div className="w-full sm:w-125 bg-white rounded-lg p-5 flex flex-col gap-3 relative 
                 transition-all duration-200"
@@ -48,7 +48,9 @@ const AddBankAccountForm = ({ close }:Props) => {
                 </div>
 
 
-                <SelectorWithSearch list={countries} flag/>
+                <SelectorWithSearch name="Country" list={countries} flag/>
+
+                <SelectorWithSearch name="Bank" list={countries}/>
 
                 <div className="flex flex-col gap-[6px] w-full">
                     <label htmlFor="2" className="text-sm font-medium flex gap-2">Email Address <span className="text-error1">*</span></label>

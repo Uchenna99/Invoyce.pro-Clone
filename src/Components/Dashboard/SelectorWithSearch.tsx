@@ -3,28 +3,31 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 interface Props {
+    name: string;
     list: string[];
     flag?: boolean;
 }
 
-const SelectorWithSearch = ({ list, flag }:Props) => {
+const SelectorWithSearch = ({ name, list, flag }:Props) => {
     const [selected, setSelected] = useState('');
     const [active, setActive] = useState(false);
     const [dropList, setDropList] = useState<string[]>(list);
     const [search, setSearch] = useState('');
-    const [options, setOptions] = useState(true);
 
     useEffect(()=>{
-        const newList = list.filter((item)=> item.includes(search));
-        
-        setDropList(newList);
+        if(!search) {
+            if(dropList !== list) { setDropList(list) }
+        }else {
+            const newList = list.filter((item)=> item.toLowerCase().includes(search.toLocaleLowerCase()));
+            setDropList(newList);
+        }
     },[search]);
 
   return (
     <>
         <div className="w-full h-fit flex flex-col gap-[6px] relative">
 
-            <p className="text-sm font-medium flex">Counry</p>
+            <p className="text-sm font-medium flex"> {name} </p>
 
             <div className="w-full h-10 px-3 border border-border rounded-lg hover:bg-accent transition-all duration-200 relative 
                 flex items-center justify-between cursor-pointer"
@@ -32,10 +35,10 @@ const SelectorWithSearch = ({ list, flag }:Props) => {
 
                 {
                     !selected?
-                    <p className="text-text-gray">Select country</p>
+                    <p className="text-text-gray">Select {name}</p>
                     :
                     <p className="text-text-black flex items-center gap-2">
-                        <Globe size={16}/>
+                        { flag && <Globe size={16}/> }
                         {selected}
                     </p>
                 }
@@ -69,6 +72,7 @@ const SelectorWithSearch = ({ list, flag }:Props) => {
                 </div>
 
                 {
+                    dropList.length > 0?
                     dropList.map((item, index)=>(
 
                         <div className="w-full h-9 px-3 flex items-center justify-between hover:bg-accent transition-all duration-200 
@@ -83,6 +87,10 @@ const SelectorWithSearch = ({ list, flag }:Props) => {
                             { item === selected && <Check size={16} color="#285cb4"/> }
                         </div>
                     ))
+                    :
+                    <div className="w-full h-9 px-3 flex items-center transition-all duration-200">
+                        <p className="text-sm text-text-gray">No options found</p>
+                    </div>
                 }
 
             </motion.div>
