@@ -1,0 +1,95 @@
+import { Check, ChevronDown, Globe, Search, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+interface Props {
+    list: string[];
+    flag?: boolean;
+}
+
+const SelectorWithSearch = ({ list, flag }:Props) => {
+    const [selected, setSelected] = useState('');
+    const [active, setActive] = useState(false);
+    const [dropList, setDropList] = useState<string[]>(list);
+    const [search, setSearch] = useState('');
+    const [options, setOptions] = useState(true);
+
+    useEffect(()=>{
+        const newList = list.filter((item)=> item.includes(search));
+        
+        setDropList(newList);
+    },[search]);
+
+  return (
+    <>
+        <div className="w-full h-fit flex flex-col gap-[6px] relative">
+
+            <p className="text-sm font-medium flex">Counry</p>
+
+            <div className="w-full h-10 px-3 border border-border rounded-lg hover:bg-accent transition-all duration-200 relative 
+                flex items-center justify-between cursor-pointer"
+                onClick={()=>{ setActive(!active) }}>
+
+                {
+                    !selected?
+                    <p className="text-text-gray">Select country</p>
+                    :
+                    <p className="text-text-black flex items-center gap-2">
+                        <Globe size={16}/>
+                        {selected}
+                    </p>
+                }
+
+                <div className="flex items-center text-text-gray gap-2">
+                    <ChevronDown size={12} className={`${active? 'rotate-180':''} transition-all duration-200`} />
+                </div>
+
+            </div>
+
+            {
+                selected && 
+                <X size={12} color="#737373" 
+                    className="absolute right-9 bottom-[14px]"
+                    onClick={()=>setSelected('')}
+                />
+            }
+
+
+            <motion.div className="w-full h-fit flex flex-col gap-1 pb-1 border border-border rounded-lg overflow-hidden 
+                bg-white shadow-md absolute z-20 top-17" 
+                initial={{opacity:0, pointerEvents:'none'}} animate={active? {opacity:1, pointerEvents:'auto'}:{}} transition={{duration:0.1}} >
+                
+                <div className="w-full flex items-center p-[10px] relative border-b border-border">
+                    <Search size={16} color="#737373" className="absolute left-5"/>
+                    <input type="text" placeholder="Search..."
+                        className="w-full h-8 border-none outline-none ring-2 ring-primary/50 rounded-lg pl-8 pr-2 text-sm"
+                        value={search}
+                        onChange={(e)=>setSearch(e.target.value)}
+                    />
+                </div>
+
+                {
+                    dropList.map((item, index)=>(
+
+                        <div className="w-full h-9 px-3 flex items-center justify-between hover:bg-accent transition-all duration-200 
+                            cursor-default" key={index} 
+                            onClick={()=>{ setSelected(item); setActive(false) }}>
+                            <div className="flex items-center gap-2">
+                                { flag && <Globe size={16} color="#737373"/> }
+                                <p className="text-text-black">
+                                    {item}
+                                </p>
+                            </div>
+                            { item === selected && <Check size={16} color="#285cb4"/> }
+                        </div>
+                    ))
+                }
+
+            </motion.div>
+
+        </div>
+    </>
+  )
+}
+
+export default SelectorWithSearch;

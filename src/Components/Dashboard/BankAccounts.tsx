@@ -1,7 +1,11 @@
 import { Banknote, Plus } from "lucide-react";
+import AddBankAccountForm from "./AddBankAccountForm";
+import { useState } from "react";
 
 
 const BankAccounts = () => {
+    const [showForm, setShowForm] = useState(false);
+
   return (
     <>
         <div className="w-full h-fit flex flex-col items-center justify-center pb-8 pt-12 px-4">
@@ -16,11 +20,16 @@ const BankAccounts = () => {
             </p>
 
             <button className="w-fit px-3 flex items-center gap-4 bg-[#285cb4] hover:bg-[#285cb4]/90 text-white font-medium 
-                justify-center rounded-lg h-9 text-sm text-nowrap">
+                justify-center rounded-lg h-9 text-sm text-nowrap"
+                onClick={()=> setShowForm(true)}>
                 <Plus size={16} />
                 Add Bank Account
             </button>
         </div>
+
+        {
+            showForm && <AddBankAccountForm close={()=> setShowForm(false)} />
+        }
     </>
   )
 }
