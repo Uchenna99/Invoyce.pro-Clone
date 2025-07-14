@@ -1,5 +1,5 @@
 import { Check, ChevronDown, Globe, Search, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
 }
 
 const SelectorWithSearch = ({ name, list, flag }:Props) => {
+    const dropdownRef = useRef<HTMLDivElement>(null);
     const [selected, setSelected] = useState('');
     const [active, setActive] = useState(false);
     const [dropList, setDropList] = useState<string[]>(list);
@@ -23,14 +24,27 @@ const SelectorWithSearch = ({ name, list, flag }:Props) => {
         }
     },[search]);
 
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+        if ( dropdownRef.current && !dropdownRef.current.contains(event.target as Node) ) {
+            setActive(false);
+        }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
   return (
     <>
-        <div className="w-full h-fit flex flex-col gap-[6px] relative">
+        <div className="w-full h-fit flex flex-col gap-[6px] relative" ref={dropdownRef}>
 
             <p className="text-sm font-medium flex"> {name} </p>
 
-            <div className="w-full h-10 px-3 border border-border rounded-lg hover:bg-accent transition-all duration-200 relative 
-                flex items-center justify-between cursor-pointer"
+            <div className={`w-full h-10 px-3 border border-border rounded-lg hover:bg-accent transition-all duration-100 relative 
+                flex items-center justify-between cursor-pointer ${active? 'ring-2 ring-primary':''}`}
                 onClick={()=>{ setActive(!active) }}>
 
                 {
@@ -59,7 +73,7 @@ const SelectorWithSearch = ({ name, list, flag }:Props) => {
 
 
             <motion.div className="w-full h-fit flex flex-col gap-1 pb-1 border border-border rounded-lg overflow-hidden 
-                bg-white shadow-md absolute z-20 top-17" 
+                bg-white shadow-md absolute z-20 top-18" 
                 initial={{opacity:0, pointerEvents:'none'}} animate={active? {opacity:1, pointerEvents:'auto'}:{}} transition={{duration:0.1}} >
                 
                 <div className="w-full flex items-center p-[10px] relative border-b border-border">
@@ -71,27 +85,29 @@ const SelectorWithSearch = ({ name, list, flag }:Props) => {
                     />
                 </div>
 
-                {
-                    dropList.length > 0?
-                    dropList.map((item, index)=>(
+                <div className="w-full h-fit max-h-50 overflow-y-auto">
+                    {
+                        dropList.length > 0?
+                        dropList.map((item, index)=>(
 
-                        <div className="w-full h-9 px-3 flex items-center justify-between hover:bg-accent transition-all duration-200 
-                            cursor-default" key={index} 
-                            onClick={()=>{ setSelected(item); setActive(false) }}>
-                            <div className="flex items-center gap-2">
-                                { flag && <Globe size={16} color="#737373"/> }
-                                <p className="text-text-black">
-                                    {item}
-                                </p>
+                            <div className="w-full h-9 px-3 flex items-center justify-between hover:bg-accent transition-all duration-200 
+                                cursor-default" key={index} 
+                                onClick={()=>{ setSelected(item); setActive(false) }}>
+                                <div className="flex items-center gap-2">
+                                    { flag && <Globe size={16} color="#737373"/> }
+                                    <p className="text-text-black">
+                                        {item}
+                                    </p>
+                                </div>
+                                { item === selected && <Check size={16} color="#285cb4"/> }
                             </div>
-                            { item === selected && <Check size={16} color="#285cb4"/> }
+                        ))
+                        :
+                        <div className="w-full h-9 px-3 flex items-center transition-all duration-200">
+                            <p className="text-sm text-text-gray">No options found</p>
                         </div>
-                    ))
-                    :
-                    <div className="w-full h-9 px-3 flex items-center transition-all duration-200">
-                        <p className="text-sm text-text-gray">No options found</p>
-                    </div>
-                }
+                    }
+                </div>
 
             </motion.div>
 
