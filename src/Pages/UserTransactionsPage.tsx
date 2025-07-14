@@ -21,7 +21,7 @@ const UserTransactionsPage = () => {
         </div>
 
 
-        <div className="w-full h-14 flex gap-4 md:gap-8 border-b border-border pb-[1px] mb-2">
+        <div className="w-full h-14 flex gap-2 md:gap-8 border-b border-border pb-[1px] mb-2">
 
           <div className={`flex-1 flex items-center justify-center gap-2 rounded-md relative z-20 transition-all duration-200 cursor-default 
             ${active === 1? 'shadow-sm shadow-shadow text-text-black' : 'text-text-gray hover:text-text-black'}`}
