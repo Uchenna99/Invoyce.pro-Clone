@@ -6,9 +6,10 @@ interface Props {
     name: string;
     list: string[];
     flag?: boolean;
+    selection: (value: string)=>void;
 }
 
-const SelectorWithSearch = ({ name, list, flag }:Props) => {
+const SelectorWithSearch = ({ name, list, flag, selection }:Props) => {
     const dropdownRef = useRef<HTMLDivElement>(null);
     const [selected, setSelected] = useState('');
     const [active, setActive] = useState(false);
@@ -67,7 +68,7 @@ const SelectorWithSearch = ({ name, list, flag }:Props) => {
                 selected && 
                 <X size={12} color="#737373" 
                     className="absolute right-9 bottom-[14px]"
-                    onClick={()=>setSelected('')}
+                    onClick={()=>{ setSelected(''); selection('') }}
                 />
             }
 
@@ -92,7 +93,7 @@ const SelectorWithSearch = ({ name, list, flag }:Props) => {
 
                             <div className="w-full h-9 px-3 flex items-center justify-between hover:bg-accent transition-all duration-200 
                                 cursor-default" key={index} 
-                                onClick={()=>{ setSelected(item); setActive(false) }}>
+                                onClick={()=>{ selection(item); setSelected(item); setActive(false) }}>
                                 <div className="flex items-center gap-2">
                                     { flag && <Globe size={16} color="#737373"/> }
                                     <p className="text-text-black">

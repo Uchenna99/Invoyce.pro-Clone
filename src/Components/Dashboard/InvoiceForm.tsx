@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const InvoiceForm = () => {
     const [toggle, setToggle] = useState(true);
+
   return (
     <>
         <div className="w-full border border-border rounded-xl shadow shadow-shadow px-6 py-5 flex flex-col gap-5">
@@ -62,7 +63,7 @@ const InvoiceForm = () => {
                     </p>
                 </div>
 
-                <ToggleButton toggle={toggle} change={()=> setToggle(!toggle)} />
+                <ToggleButton toggle={toggle} change={()=> setToggle(!toggle)} activeToggle />
             </div>
 
 
