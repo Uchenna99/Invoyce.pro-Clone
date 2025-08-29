@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import CreateSendTrackInvoices from "../Components/CreateSendTrackInvoices";
 import FAQ from "../Components/FAQ";
 import Footer from "../Components/Footer";
@@ -11,6 +12,7 @@ import { motion } from "framer-motion";
 
 
 const HomePage = () => {
+  const navigate = useNavigate();
 
   return (
     <>
@@ -53,7 +55,7 @@ const HomePage = () => {
           <motion.div className="w-full flex max-sm:flex-col gap-4 mt-2"
             initial={{opacity:0, y:15}} animate={{opacity:1, y:0}} transition={{duration:0.5, delay:0.3, ease:'easeInOut'}} >
             <div className="w-full sm:w-fit ">
-              <HeroButton buttonText="Get Started for Free"/>
+              <HeroButton buttonText="Get Started for Free" onClickButton={()=> navigate('/dashboard')}/>
             </div>
             <div className="w-full sm:w-fit h-[54px] flex items-center justify-center px-6 border border-[#e5e5e5] rounded-xl cursor-pointer
               hover:bg-[#737373]/10 active:bg-[#737373]/10 transition-all duration-200">

@@ -106,7 +106,8 @@ const Navbar = () => {
             <p className="text-[#0a0a0a] font-medium">Sign In</p>
           </div>
 
-          <div className="w-full h-10 bg-[#285cb4] rounded-xl flex items-center justify-center active:bg-[#285cb4]/90">
+          <div className="w-full h-10 bg-[#285cb4] rounded-xl flex items-center justify-center active:bg-[#285cb4]/90"
+            onClick={()=> navigate('/dashboard')}>
             <p className="text-white font-medium">Get Started Free</p>
           </div>
 
