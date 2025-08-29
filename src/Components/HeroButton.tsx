@@ -1,7 +1,7 @@
 
 interface Props {
     buttonText: string;
-    onClickButton: ()=>void;
+    onClickButton?: ()=>void;
 }
 
 const HeroButton = ({ buttonText, onClickButton }:Props) => {
