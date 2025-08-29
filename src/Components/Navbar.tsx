@@ -59,7 +59,8 @@ const Navbar = () => {
               </div>
 
               <div className="w-fit h-[42px] flex items-center px-4 border border-[#d1d5db] rounded-xl bg-[#285cb4] cursor-pointer
-                hover:bg-[#285cb4]/90 active:bg-[#285cb4]/90 transition-all duration-200">
+                hover:bg-[#285cb4]/90 active:bg-[#285cb4]/90 transition-all duration-200"
+                onClick={()=> navigate('/dashboard')}>
                 <p className="font-[500] text-white">Get Started Free</p>
               </div>
 
